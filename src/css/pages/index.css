@@ -1,0 +1,44 @@
+#intro {
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    background-color: var(--cs-blue);
+}
+
+#get-started {
+    margin-top: 25px;
+
+    width: 150px;
+    height: 25px;
+
+    color: #242424;
+
+    font-weight: bold;
+    font-size: 12px;
+
+    background-color: #FFFFFF;
+
+    border: 0;
+
+    transition: .2s;
+}
+
+#get-started:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#articles {
+    margin-top: 50px;
+}
+
+#articles-header {
+    text-align: center;
+}
