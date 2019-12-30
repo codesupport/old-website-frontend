@@ -1,0 +1,10 @@
+.card {
+    padding: 15px;
+
+    background-color: var(--foreground);
+}
+
+.card-description {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
