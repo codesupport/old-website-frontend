@@ -9,43 +9,48 @@ import "../../css/pages/resources.css";
 
 class Resources extends Component {
     state = {
-        resources: []
+        resources: [],
+        filterResources: []
     };
 
     async getResources() {
         try {
-            const categories = ["hosting", "javascript"];
+            let categories = [];
+
+            if (this.state.filterResources.length) {
+                categories = this.state.filterResources;
+            } else {
+                categories = ["hosting", "javascript"];
+            }
+
+            let resources = [];
 
             for (const category of categories) {
-                const data = await fetch(`${config["resources-api"]}/${category}.json`);
-                const resources = await data.json();
+                const request = await fetch(`${config["resources-api"]}/${category.toLowerCase()}.json`);
+                const data = await request.json();
 
-                resources.forEach((resource, i) => {
-                    resources[resource] = {...resource, key: `${category}-${i}`};
+                data.forEach((resource, i) => {
+                    data[resource] = {
+                        ...resource,
+                        key: `${category}-${i}`
+                    };
                 });
 
-                this.setState({
-                    resources: resources.concat(this.state.resources)
-                });
+                resources = resources.concat(data);
             }
+
+            this.setState({resources});
         } catch (error) {
             console.error(error);
-
-            return [];
         }
     }
 
     componentDidMount() {
-        this.setState({
-            resources: this.getResources()
-        });
+        this.getResources();
     }
 
     render() {
         const {resources} = this.state;
-
-        // A promise gets added to the end of resources which we don't want to display a card for so we remove it.
-        delete resources[resources.length - 1];
 
         return (
             <>
