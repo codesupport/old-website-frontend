@@ -17,14 +17,13 @@ class Resources extends Component {
     async getResources() {
         try {
             let categories = [];
+            let resources = [];
 
             if (this.state.filterResources !== "Show All") {
                 categories = [this.state.filterResources];
             } else {
                 categories = config["resource-categories"];
             }
-
-            let resources = [];
 
             for (const category of categories) {
                 const request = await fetch(`${config["resources-api"]}/${category.toLowerCase()}.json`);
@@ -83,7 +82,10 @@ class Resources extends Component {
                 this.setState({status: "No matches found..."});
             }
 
-            this.setState({status: undefined, resources: resourcesThatMatchQuery});
+            this.setState({
+                status: undefined,
+                resources: resourcesThatMatchQuery
+            });
         }
     };
 
