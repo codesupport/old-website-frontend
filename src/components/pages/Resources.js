@@ -40,6 +40,13 @@ class Resources extends Component {
                 resources = resources.concat(data);
             }
 
+            resources = resources.sort((a, b) => {
+                let x = a.name;
+                let y = b.name;
+
+                return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+            });
+
             this.setState({resources});
         } catch (error) {
             console.error(error);
