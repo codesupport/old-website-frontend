@@ -10,17 +10,18 @@ import "../../css/pages/resources.css";
 class Resources extends Component {
     state = {
         resources: [],
-        filterResources: []
+        filterResources: "Show All",
+        status: "Loading..."
     };
 
     async getResources() {
         try {
             let categories = [];
 
-            if (this.state.filterResources.length) {
-                categories = this.state.filterResources;
+            if (this.state.filterResources !== "Show All") {
+                categories = [this.state.filterResources];
             } else {
-                categories = ["hosting", "javascript"];
+                categories = config["resource-categories"];
             }
 
             let resources = [];
@@ -42,15 +43,49 @@ class Resources extends Component {
             this.setState({resources});
         } catch (error) {
             console.error(error);
+
+            this.setState({
+                status: "There was an error loading the resources."
+            });
         }
     }
+
+    filterResources = async (event) => {
+        await this.setState({
+           filterResources: event.target.value
+        });
+
+        this.getResources();
+    };
+
+    searchResources = (event) => {
+        const query = event.target.value;
+
+        if (query === "") {
+            this.getResources();
+        } else {
+            let resourcesThatMatchQuery = [];
+
+            for (const resource of this.state.resources) {
+                if (resource.name.includes(query)) {
+                    resourcesThatMatchQuery.push(resource);
+                }
+            }
+
+            if (!resourcesThatMatchQuery.length) {
+                this.setState({status: "No matches found..."});
+            }
+
+            this.setState({status: undefined, resources: resourcesThatMatchQuery});
+        }
+    };
 
     componentDidMount() {
         this.getResources();
     }
 
     render() {
-        const {resources} = this.state;
+        const {resources, status} = this.state;
 
         return (
             <>
@@ -66,10 +101,31 @@ class Resources extends Component {
                         </div>
                     </div>
                 </section>
+                <section id="filter-resources">
+                    <div className="container">
+                        <div className="content">
+                            <div id="resource-search">
+                                <label>
+                                    Search for a resource
+                                </label>
+                                <input onChange={this.searchResources} type="text" placeholder="Type something..." />
+                            </div>
+                            <div id="resource-categories">
+                                <label>
+                                    Select a category
+                                </label>
+                                <select onChange={this.filterResources} value={this.state.filterResources}>
+                                    <option value="Show All">Show All</option>
+                                    {config["resource-categories"].map(category => <option value={category}>{category}</option>)}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section id="resources">
                     <div className="container">
                         <div className="content">
-                            {!resources.length ? "Loading..." :
+                            {!resources.length ? status :
                                 <CardGroup>
                                     {resources.map((resource) =>
                                         <Card

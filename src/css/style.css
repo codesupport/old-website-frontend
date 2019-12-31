@@ -56,6 +56,37 @@ button:hover {
     cursor: pointer;
 }
 
+label {
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0;
+    font-weight: bold;
+}
+
+input {
+    padding: 5px;
+
+    background-color: var(--foreground);
+
+    outline: none;
+
+    border: 0;
+}
+
+select {
+    padding: 5px;
+
+    background-color: var(--foreground);
+
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+
+    outline: none;
+
+    border-radius: 0;
+    border: 0;
+}
+
 #intro {
     height: 300px;
 
