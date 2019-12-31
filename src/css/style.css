@@ -40,6 +40,38 @@ h2 {
     font-size: 25px;
 }
 
+button {
+    padding: 5px;
+
+    color: var(--foreground);
+
+    font-weight: bold;
+
+    background-color: var(--text);
+
+    border: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#intro {
+    height: 300px;
+
+    margin-bottom: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    background-color: var(--cs-blue);
+}
+
 .container {
     width: 100vw;
 
