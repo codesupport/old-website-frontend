@@ -98,7 +98,7 @@ class Resources extends Component {
 
         return (
             <>
-                <section id="intro">
+                <header id="intro">
                     <div className="container">
                         <div className="content">
                             <h1>
@@ -109,8 +109,8 @@ class Resources extends Component {
                             </p>
                         </div>
                     </div>
-                </section>
-                <section id="filter-resources">
+                </header>
+                <section id="filter-resources" role="search">
                     <div className="container">
                         <div className="content">
                             <div id="resource-search">
@@ -131,7 +131,7 @@ class Resources extends Component {
                         </div>
                     </div>
                 </section>
-                <section id="resources">
+                <main id="resources">
                     <div className="container">
                         <div className="content">
                             {!resources.length ? status :
@@ -160,7 +160,7 @@ class Resources extends Component {
                             </p>
                         </div>
                     </div>
-                </section>
+                </main>
             </>
         );
     }
