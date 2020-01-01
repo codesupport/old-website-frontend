@@ -65,7 +65,7 @@ class Resources extends Component {
     };
 
     searchResources = (event) => {
-        const query = event.target.value;
+        const query = event.target.value.toLowerCase();
 
         if (query === "") {
             this.getResources();
@@ -73,7 +73,7 @@ class Resources extends Component {
             let resourcesThatMatchQuery = [];
 
             for (const resource of this.state.resources) {
-                if (resource.name.includes(query)) {
+                if (resource.name.toLowerCase().includes(query)) {
                     resourcesThatMatchQuery.push(resource);
                 }
             }
