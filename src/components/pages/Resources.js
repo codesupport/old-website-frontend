@@ -10,20 +10,20 @@ import "../../css/pages/resources.css";
 class Resources extends Component {
     state = {
         resources: [],
-        filterResources: []
+        filterResources: "Show All",
+        status: "Loading..."
     };
 
     async getResources() {
         try {
             let categories = [];
-
-            if (this.state.filterResources.length) {
-                categories = this.state.filterResources;
-            } else {
-                categories = ["hosting", "javascript"];
-            }
-
             let resources = [];
+
+            if (this.state.filterResources !== "Show All") {
+                categories = [this.state.filterResources];
+            } else {
+                categories = config["resource-categories"];
+            }
 
             for (const category of categories) {
                 const request = await fetch(`${config["resources-api"]}/${category.toLowerCase()}.json`);
@@ -39,22 +39,66 @@ class Resources extends Component {
                 resources = resources.concat(data);
             }
 
+            resources = resources.sort((a, b) => {
+                let x = a.name;
+                let y = b.name;
+
+                return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+            });
+
             this.setState({resources});
         } catch (error) {
             console.error(error);
+
+            this.setState({
+                status: "There was an error loading the resources."
+            });
         }
     }
+
+    filterResources = async (event) => {
+        await this.setState({
+           filterResources: event.target.value
+        });
+
+        this.getResources();
+    };
+
+    searchResources = (event) => {
+        const query = event.target.value.toLowerCase();
+
+        if (query === "") {
+            this.getResources();
+        } else {
+            let resourcesThatMatchQuery = [];
+
+            for (const resource of this.state.resources) {
+                if (resource.name.toLowerCase().includes(query)) {
+                    resourcesThatMatchQuery.push(resource);
+                }
+            }
+
+            if (!resourcesThatMatchQuery.length) {
+                this.setState({status: "No matches found..."});
+            }
+
+            this.setState({
+                status: undefined,
+                resources: resourcesThatMatchQuery
+            });
+        }
+    };
 
     componentDidMount() {
         this.getResources();
     }
 
     render() {
-        const {resources} = this.state;
+        const {resources, status} = this.state;
 
         return (
             <>
-                <section id="intro">
+                <header id="intro">
                     <div className="container">
                         <div className="content">
                             <h1>
@@ -65,11 +109,32 @@ class Resources extends Component {
                             </p>
                         </div>
                     </div>
-                </section>
-                <section id="resources">
+                </header>
+                <section id="filter-resources" role="search">
                     <div className="container">
                         <div className="content">
-                            {!resources.length ? "Loading..." :
+                            <div id="resource-search">
+                                <label>
+                                    Search for a resource
+                                </label>
+                                <input onChange={this.searchResources} type="text" placeholder="Type something..." />
+                            </div>
+                            <div id="resource-categories">
+                                <label>
+                                    Select a category
+                                </label>
+                                <select onChange={this.filterResources} value={this.state.filterResources}>
+                                    <option value="Show All">Show All</option>
+                                    {config["resource-categories"].map(category => <option value={category}>{category}</option>)}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <main id="resources">
+                    <div className="container">
+                        <div className="content">
+                            {!resources.length ? status :
                                 <CardGroup>
                                     {resources.map((resource) =>
                                         <Card
@@ -95,7 +160,7 @@ class Resources extends Component {
                             </p>
                         </div>
                     </div>
-                </section>
+                </main>
             </>
         );
     }

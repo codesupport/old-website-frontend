@@ -4,7 +4,7 @@ import "../../css/molecules/card.css";
 
 function Card({title, description, children}) {
     return (
-        <div className="card">
+        <article className="card">
             <h2 className="card-title">
                 {title}
             </h2>
@@ -12,7 +12,7 @@ function Card({title, description, children}) {
                 {description}
             </p>
             {children}
-        </div>
+        </article>
     );
 }
 
