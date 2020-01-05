@@ -11,6 +11,7 @@ class Resources extends Component {
     state = {
         resources: [],
         filterResources: "Show All",
+        filterPrice: "Show All",
         status: "Loading..."
     };
 
@@ -46,6 +47,10 @@ class Resources extends Component {
                 return ((x < y) ? -1 : ((x > y) ? 1 : 0));
             });
 
+            if (["true", "false"].includes(this.state.filterPrice)) {
+                resources = await resources.filter(resource => resource.free === JSON.parse(this.state.filterPrice));
+            }
+
             this.setState({resources});
         } catch (error) {
             console.error(error);
@@ -59,6 +64,14 @@ class Resources extends Component {
     filterResources = async (event) => {
         await this.setState({
            filterResources: event.target.value
+        });
+
+        this.getResources();
+    };
+
+    filterPrice = async (event) => {
+        await this.setState({
+            filterPrice: event.target.value
         });
 
         this.getResources();
@@ -113,21 +126,25 @@ class Resources extends Component {
                 <section id="filter-resources" role="search">
                     <div className="container">
                         <div className="content">
-                            <div id="resource-search">
-                                <label>
-                                    Search for a resource
-                                </label>
+                            <label>
+                                Search for a resource
                                 <input onChange={this.searchResources} type="text" placeholder="Type something..." />
-                            </div>
-                            <div id="resource-categories">
-                                <label>
-                                    Select a category
-                                </label>
+                            </label>
+                            <label>
+                                Filter by category
                                 <select onChange={this.filterResources} value={this.state.filterResources}>
                                     <option value="Show All">Show All</option>
                                     {config["resource-categories"].map(category => <option value={category}>{category}</option>)}
                                 </select>
-                            </div>
+                            </label>
+                            <label>
+                                Filter by price
+                                <select onChange={this.filterPrice} value={this.state.filterPrice}>
+                                    <option value="Show All">Show All</option>
+                                    <option value="true">Free</option>
+                                    <option value="false">Paid</option>
+                                </select>
+                            </label>
                         </div>
                     </div>
                 </section>
