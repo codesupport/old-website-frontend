@@ -10,6 +10,7 @@ import "../../css/pages/resources.css";
 class Resources extends Component {
     state = {
         resources: [],
+        constantResources: [],
         filterResources: "Show All",
         status: "Loading..."
     };
@@ -46,7 +47,7 @@ class Resources extends Component {
                 return ((x < y) ? -1 : ((x > y) ? 1 : 0));
             });
 
-            this.setState({resources});
+            this.setState({resources, constantResources: resources});
         } catch (error) {
             console.error(error);
 
@@ -58,7 +59,7 @@ class Resources extends Component {
 
     filterResources = async (event) => {
         await this.setState({
-           filterResources: event.target.value
+            filterResources: event.target.value
         });
 
         this.getResources();
@@ -68,11 +69,11 @@ class Resources extends Component {
         const query = event.target.value.toLowerCase();
 
         if (query === "") {
-            this.getResources();
+            this.setState({resources: this.state.constantResources});
         } else {
             let resourcesThatMatchQuery = [];
 
-            for (const resource of this.state.resources) {
+            for (const resource of this.state.constantResources) {
                 if (resource.name.toLowerCase().includes(query)) {
                     resourcesThatMatchQuery.push(resource);
                 }
@@ -117,7 +118,7 @@ class Resources extends Component {
                                 <label>
                                     Search for a resource
                                 </label>
-                                <input onChange={this.searchResources} type="text" placeholder="Type something..." />
+                                <input onChange={this.searchResources} type="text" placeholder="Type something..."/>
                             </div>
                             <div id="resource-categories">
                                 <label>
@@ -125,7 +126,8 @@ class Resources extends Component {
                                 </label>
                                 <select onChange={this.filterResources} value={this.state.filterResources}>
                                     <option value="Show All">Show All</option>
-                                    {config["resource-categories"].map(category => <option value={category}>{category}</option>)}
+                                    {config["resource-categories"].map(category => <option
+                                        value={category}>{category}</option>)}
                                 </select>
                             </div>
                         </div>
