@@ -10,6 +10,7 @@ import "../../css/pages/resources.css";
 class Resources extends Component {
     state = {
         resources: [],
+        constantResources: [],
         filterResources: "Show All",
         filterPrice: "Show All",
         status: "Loading..."
@@ -51,7 +52,7 @@ class Resources extends Component {
                 resources = await resources.filter(resource => resource.free === JSON.parse(this.state.filterPrice));
             }
 
-            this.setState({resources});
+            this.setState({resources, constantResources: resources});
         } catch (error) {
             console.error(error);
 
@@ -63,7 +64,7 @@ class Resources extends Component {
 
     filterResources = async (event) => {
         await this.setState({
-           filterResources: event.target.value
+            filterResources: event.target.value
         });
 
         this.getResources();
@@ -81,11 +82,11 @@ class Resources extends Component {
         const query = event.target.value.toLowerCase();
 
         if (query === "") {
-            this.getResources();
+            this.setState({resources: this.state.constantResources});
         } else {
             let resourcesThatMatchQuery = [];
 
-            for (const resource of this.state.resources) {
+            for (const resource of this.state.constantResources) {
                 if (resource.name.toLowerCase().includes(query)) {
                     resourcesThatMatchQuery.push(resource);
                 }
@@ -134,7 +135,8 @@ class Resources extends Component {
                                 Filter by category
                                 <select onChange={this.filterResources} value={this.state.filterResources}>
                                     <option value="Show All">Show All</option>
-                                    {config["resource-categories"].map(category => <option value={category}>{category}</option>)}
+                                    {config["resource-categories"].map(category => <option
+                                        value={category}>{category}</option>)}
                                 </select>
                             </label>
                             <label>
