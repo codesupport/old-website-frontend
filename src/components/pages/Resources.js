@@ -129,22 +129,22 @@ class Resources extends Component {
                         <div className="content">
                             <label>
                                 Search for a resource
-                                <input onChange={this.searchResources} type="text" placeholder="Type something..." />
+                                <input id="search-resources" onChange={this.searchResources} type="text" placeholder="Type something..." />
                             </label>
                             <label>
                                 Filter by category
-                                <select onChange={this.filterResources} value={this.state.filterResources}>
-                                    <option value="Show All">Show All</option>
+                                <select id="filter-category" onChange={this.filterResources} value={this.state.filterResources}>
+                                    <option value="Show All" key="all">Show All</option>
                                     {config["resource-categories"].map(category => <option
-                                        value={category}>{category}</option>)}
+                                        value={category} key={category}>{category}</option>)}
                                 </select>
                             </label>
                             <label>
                                 Filter by price
-                                <select onChange={this.filterPrice} value={this.state.filterPrice}>
-                                    <option value="Show All">Show All</option>
-                                    <option value="true">Free</option>
-                                    <option value="false">Paid</option>
+                                <select id="filter-price" onChange={this.filterPrice} value={this.state.filterPrice}>
+                                    <option value="Show All" key="all">Show All</option>
+                                    <option value="true" key="true">Free</option>
+                                    <option value="false" key="false">Paid</option>
                                 </select>
                             </label>
                         </div>
