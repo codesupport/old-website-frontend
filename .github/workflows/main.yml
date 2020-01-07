@@ -1,0 +1,19 @@
+name: CI
+on: [pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Runs Tests
+        run: |
+          npm i
+          CI=true npm run test
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Builds the React App
+        run: |
+          npm i
+          npm run build
