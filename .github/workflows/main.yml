@@ -1,7 +1,7 @@
 name: CI
 on: [pull_request]
 jobs:
-  lint:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -9,7 +9,7 @@ jobs:
         run: |
           npm i
           CI=true npm run test
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
