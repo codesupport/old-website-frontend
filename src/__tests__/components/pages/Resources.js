@@ -1,5 +1,5 @@
 import React from "react";
-import {shallow} from "enzyme";
+import {mount, shallow} from "enzyme";
 
 import Resources from "../../../components/pages/Resources";
 
@@ -32,7 +32,8 @@ describe("Resources", () => {
         it("shows no resources if the search query doesn't match any resources", () => {
             component.setState({
                 resources: [{
-                    name: "Bad CSS Tutorials"
+                    name: "Bad CSS Tutorials",
+                    key: "css-0"
                 }]
             });
             component.find("#search-resources").simulate("change", {
