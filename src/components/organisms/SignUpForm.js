@@ -19,6 +19,7 @@ function SignUpForm() {
                     input={{
                         name: "alias",
                         type: "text",
+                        placeholder: "richardh",
                         required: true
                     }}
                 />
@@ -27,6 +28,7 @@ function SignUpForm() {
                     input={{
                         name: "email",
                         type: "email",
+                        placeholder: "richard.hendricks@piedpiper.com",
                         required: true
                     }}
                 />
@@ -35,6 +37,7 @@ function SignUpForm() {
                     input={{
                         name: "password",
                         type: "password",
+                        placeholder: "••••••••••••••",
                         required: true
                     }}
                 />
