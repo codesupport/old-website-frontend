@@ -49,3 +49,16 @@ label.with-input input:invalid {
 label.with-input input:focus {
     border: 1px solid var(--cs-blue);
 }
+
+label.with-input .input-error {
+    color: var(--error);
+
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: 10px;
+}
+
+label.with-input .input-error::before {
+    content: "Error: ";
+    font-weight: bold;
+}

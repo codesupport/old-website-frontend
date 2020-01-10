@@ -1,6 +1,8 @@
 .sign-up {
     width: 600px;
-    height: 627px;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     display: flex;
 

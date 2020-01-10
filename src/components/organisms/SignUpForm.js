@@ -20,6 +20,8 @@ function SignUpForm() {
                         name: "alias",
                         type: "text",
                         placeholder: "richardh",
+                        pattern: /^[a-z]{3,10}$/,
+                        errorMessage: "Must only contain letters and be between three and ten characters in length. ",
                         required: true
                     }}
                 />
@@ -29,6 +31,8 @@ function SignUpForm() {
                         name: "email",
                         type: "email",
                         placeholder: "richard.hendricks@piedpiper.com",
+                        pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+                        errorMessage: "Must be a valid email address.",
                         required: true
                     }}
                 />
@@ -38,6 +42,19 @@ function SignUpForm() {
                         name: "password",
                         type: "password",
                         placeholder: "••••••••••••••",
+                        pattern: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/,
+                        errorMessage: "Must contain eight characters with at least one letter, one number and one special character.",
+                        required: true
+                    }}
+                />
+                <LabelWithInput
+                    title="Password Confirmation"
+                    input={{
+                        name: "password_confirmation",
+                        type: "password",
+                        placeholder: "••••••••••••••",
+                        pattern: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/,
+                        errorMessage: "Does not match the password you supplied.",
                         required: true
                     }}
                 />
