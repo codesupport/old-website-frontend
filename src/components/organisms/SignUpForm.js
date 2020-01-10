@@ -23,7 +23,7 @@ function SignUpForm({modalToggle}) {
                         name: "alias",
                         type: "text",
                         placeholder: "richardh",
-                        pattern: /^[a-z]{3,10}$/,
+                        pattern: /^[A-Za-z]{3,10}$/,
                         errorMessage: "Must only contain letters and be between three and ten characters in length. ",
                         required: true
                     }}

@@ -19,12 +19,14 @@ class LabelWithInput extends Component {
                         [name]: true
                     }
                 });
+
+                return;
             }
         }
 
         this.setState({
             errors: {
-                [name]: this.state.errors[name] ? true : !value.match(pattern)
+                [name]: !value.match(pattern)
             }
         });
     }

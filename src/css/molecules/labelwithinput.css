@@ -42,10 +42,6 @@ label.with-input input {
     transition: .1s;
 }
 
-label.with-input input:invalid {
-    border: 1px solid var(--error);
-}
-
 label.with-input input:focus {
     border: 1px solid var(--cs-blue);
 }
