@@ -42,3 +42,7 @@ nav ul li a:hover {
 
     vertical-align: middle;
 }
+
+.login:hover {
+    cursor: pointer;
+}
