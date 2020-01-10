@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway:800&display=swap");
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -9,6 +9,7 @@
     --background: #F7F7F7;
     --foreground: #FFFFFF;
     --text: #242424;
+    --error: #DC143C;
 }
 
 /*@media screen and (prefers-color-scheme: dark) {*/
