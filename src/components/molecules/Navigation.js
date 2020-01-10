@@ -53,9 +53,9 @@ class Navigation extends Component {
                                 Resources
                             </Link>
                         </li>
-                        <li className="login" onClick={this.toggleLoginModal}>
+                        <li onClick={this.toggleLoginModal}>
                             <Link>
-                                {loggedIn ? "Log Out" : "Log In"}
+                                {!loggedIn ? "Sign Up" : ""}
                             </Link>
                         </li>
                     </ul>
