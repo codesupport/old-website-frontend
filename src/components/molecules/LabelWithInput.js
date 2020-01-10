@@ -24,7 +24,7 @@ class LabelWithInput extends Component {
 
         this.setState({
             errors: {
-                [name]: !value.match(pattern)
+                [name]: this.state.errors[name] ? true : !value.match(pattern)
             }
         });
     }
