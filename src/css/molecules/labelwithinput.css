@@ -1,0 +1,51 @@
+label.with-input {
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+
+    color: var(--text);
+
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+span.label-description {
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+label.with-input input {
+    width: 500px;
+    height: 50px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    color: var(--text);
+
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+
+    background-color: transparent;
+
+    outline: none;
+
+    border: 1px solid var(--text);
+    border-radius: 5px;
+
+    transition: .1s;
+}
+
+label.with-input input:invalid {
+    border: 1px solid var(--error);
+}
+
+label.with-input input:focus {
+    border: 1px solid var(--cs-blue);
+}

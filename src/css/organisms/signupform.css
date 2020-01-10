@@ -1,0 +1,15 @@
+.sign-up {
+    width: 600px;
+    height: 627px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #FFFFFF;
+
+    border-radius: 25px;
+
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
