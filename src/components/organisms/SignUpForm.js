@@ -15,7 +15,7 @@ function SignUpForm() {
                 </header>
                 <LabelWithInput
                     title="Display Name"
-                    description="This is what you'll be known as on CodeSupport"
+                    description="This is what you'll be known as on CodeSupport."
                     input={{
                         name: "alias",
                         type: "text",
