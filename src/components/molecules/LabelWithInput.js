@@ -15,7 +15,9 @@ class LabelWithInput extends Component {
 
             if (password.value !== value) {
                 this.setState({
-                    [name]: true
+                    errors: {
+                        [name]: true
+                    }
                 });
             }
         }
@@ -51,7 +53,6 @@ class LabelWithInput extends Component {
                     }}
                 />
                 {errors[name] ? <span className="input-error">{errorMessage}</span> : ""}
-
             </label>
         );
     }
