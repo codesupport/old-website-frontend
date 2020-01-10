@@ -4,9 +4,12 @@ import SubmitButton from "../atoms/SubmitButton";
 
 import "../../css/organisms/signupform.css";
 
-function SignUpForm() {
+function SignUpForm({modalToggle}) {
     return (
         <article className="sign-up">
+            <button className="close-modal" onClick={modalToggle}>
+                X
+            </button>
             <form>
                 <header>
                     <h1>

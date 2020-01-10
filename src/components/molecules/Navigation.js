@@ -27,7 +27,7 @@ class Navigation extends Component {
 
         return (
             <>
-                {showModal ? <ModalContainer> <SignUpForm/> </ModalContainer> : ""}
+                {showModal ? <ModalContainer> <SignUpForm modalToggle={this.toggleLoginModal} /> </ModalContainer> : ""}
                 <nav>
                     <ul>
                         <li>
@@ -54,7 +54,9 @@ class Navigation extends Component {
                             </Link>
                         </li>
                         <li className="login" onClick={this.toggleLoginModal}>
-                            {loggedIn ? "Log Out" : "Log In"}
+                            <Link>
+                                {loggedIn ? "Log Out" : "Log In"}
+                            </Link>
                         </li>
                     </ul>
                 </nav>
