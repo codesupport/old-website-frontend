@@ -1,0 +1,113 @@
+/* Profile Header */
+
+#profile-header {
+    margin-top: 50px;
+}
+
+#profile-information {
+    display: grid;
+
+    grid-template-columns: 1fr 3fr;
+    grid-column-gap: 25px;
+}
+
+#profile-avatar {
+    width: 100%;
+}
+
+#profile-job {
+    font-weight: bold;
+}
+
+#profile-roles {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-role {
+    margin-right: 5px;
+    padding: 5px;
+
+    color: #242424;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    background-color: var(--foreground);
+
+    border-radius: 5px;
+}
+
+.profile-role[role-level="moderator"] {
+    background-color: #3E97D7;
+}
+
+.profile-role[role-level="mod-assistant"] {
+    background-color: #EFC43B;
+}
+
+.profile-role[role-level="verified"] {
+    background-color: #3BCC78;
+}
+
+.profile-role[role-level="supporter"] {
+    background-color: #E37F34;
+}
+
+.profile-role[role-level="contributor"] {
+    background-color: #A51654;
+}
+
+#connected-accounts {
+    width: 100%;
+
+    margin-top: 5px;
+}
+
+#connected-accounts ul {
+    padding: 5px;
+
+    list-style-type: none;
+}
+
+#connected-accounts li {
+    margin-right: 25px;
+    display: inline;
+}
+
+.profile-account-icon {
+    margin-right: 5px;
+}
+
+/*#profile area ??*/
+#profile-area {
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: 600px 400px;
+    grid-column-gap: 25px;
+}
+
+#profile-area .card {
+    margin-bottom: 10px;
+}
+
+#profile-area h2 {
+    margin-bottom: 10px;
+}
+
+/* Feed */
+.github-repo-link {
+    color: inherit;
+    text-decoration: none;
+
+    transition: .1s;
+}
+
+.github-repo-link:hover {
+    cursor: pointer;
+}
+
+#github-repositories {
+    margin-top: 25px;
+}
