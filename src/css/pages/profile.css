@@ -79,12 +79,12 @@
     margin-right: 5px;
 }
 
-/*#profile area ??*/
+/* Profile Area */
 #profile-area {
     margin-top: 50px;
 
     display: grid;
-    grid-template-columns: 600px 400px;
+    grid-template-columns: 600px 375px;
     grid-column-gap: 25px;
 }
 
