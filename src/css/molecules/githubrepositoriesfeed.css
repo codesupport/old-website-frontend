@@ -1,0 +1,14 @@
+.github-repo-link {
+    color: inherit;
+    text-decoration: none;
+
+    transition: .1s;
+}
+
+.github-repo-link:hover {
+    cursor: pointer;
+}
+
+#github-repositories {
+    margin-top: 25px;
+}
