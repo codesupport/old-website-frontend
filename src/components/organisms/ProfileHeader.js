@@ -13,12 +13,6 @@ class ProfileHeader extends Component {
         profile: {}
     };
 
-    constructor(props) {
-        super(props);
-
-        this.alias = props.alias;
-    }
-
     async getProfile(alias) {
         const api = config["backend-api"];
         const id = 1; // temp
@@ -58,7 +52,7 @@ class ProfileHeader extends Component {
     }
 
     componentDidMount() {
-        this.getProfile(this.alias);
+        this.getProfile(this.props.alias);
     }
 
     render() {

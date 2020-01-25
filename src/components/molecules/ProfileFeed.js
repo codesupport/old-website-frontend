@@ -8,12 +8,6 @@ class ProfileFeed extends Component {
         articles: []
     };
 
-    constructor(props) {
-        super(props);
-
-        this.user = props.user;
-    }
-
     async getUsersArticles(user) {
         const api = config["backend-api"];
 
@@ -37,11 +31,11 @@ class ProfileFeed extends Component {
     }
 
     componentDidMount() {
-        this.getUsersArticles(this.user);
+        this.getUsersArticles(this.props.user);
     }
 
     render() {
-        const {user} = this;
+        const {user} = this.props;
         const {articles} = this.state;
 
         return (

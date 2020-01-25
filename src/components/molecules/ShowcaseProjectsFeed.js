@@ -9,12 +9,6 @@ class ShowcaseProjectsFeed extends Component {
         showcase_projects: []
     };
 
-    constructor(props) {
-        super(props);
-
-        this.user = props.user;
-    }
-
     async getShowcaseProjects(user) {
         const api = config["backend-api"];
 
@@ -43,11 +37,11 @@ class ShowcaseProjectsFeed extends Component {
     }
 
     componentDidMount() {
-        this.getShowcaseProjects(this.user);
+        this.getShowcaseProjects(this.props.user);
     }
 
     render() {
-        const {user} = this;
+        const {user} = this.props;
         const {showcase_projects} = this.state;
 
         return (
