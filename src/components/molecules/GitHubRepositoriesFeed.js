@@ -11,13 +11,6 @@ class GitHubRepositoriesFeed extends Component {
         github_repositories: []
     };
 
-    constructor(props) {
-        super(props);
-
-        this.user = props.user;
-        this.account = props.account;
-    }
-
     async getGitHubProjects(user) {
         const api = config["github-api"];
 
@@ -45,11 +38,13 @@ class GitHubRepositoriesFeed extends Component {
     }
 
     componentDidMount() {
-        if (this.account) this.getGitHubProjects(this.user);
+        const {account, user} = this.props;
+
+        if (account) this.getGitHubProjects(user);
     }
 
     render() {
-        const {user, account} = this;
+        const {user, account} = this.props;
         const {github_repositories} = this.state;
         return (
             <section id="github-repositories">
