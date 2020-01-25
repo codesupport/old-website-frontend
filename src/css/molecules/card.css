@@ -2,6 +2,9 @@
     padding: 15px;
 
     background-color: var(--foreground);
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
 }
 
 .card-description {

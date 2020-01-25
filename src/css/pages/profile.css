@@ -1,0 +1,24 @@
+#profile-area {
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: 600px 375px;
+    grid-column-gap: 25px;
+}
+
+@media only screen and (max-width: 900px) {
+    #profile-area {
+        margin-left: 25px;
+        margin-right: 25px;
+
+        grid-template-columns: 1fr;
+    }
+}
+
+#profile-area .card {
+    margin-bottom: 10px;
+}
+
+#profile-area h2 {
+    margin-bottom: 10px;
+}

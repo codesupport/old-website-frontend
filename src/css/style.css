@@ -8,17 +8,20 @@
 
     --background: #F7F7F7;
     --foreground: #FFFFFF;
+    --border: #C0C0C0;
     --text: #242424;
     --error: #DC143C;
+    --dark-mode: true;
 }
 
-/*@media screen and (prefers-color-scheme: dark) {*/
-/*    :root {*/
-/*        --background: #121212;*/
-/*        --foreground: #242424;*/
-/*        --text: #F7F7F7;*/
-/*    }*/
-/*}*/
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --background: #11131E;
+        --foreground: #1d1f30;
+        --border: #0C0C0C;
+        --text: #E8E8E9;
+    }
+}
 
 body {
     color: var(--text);
@@ -44,13 +47,14 @@ h2 {
 button {
     padding: 5px;
 
-    color: var(--foreground);
+    color: var(--text);
 
     font-weight: bold;
 
-    background-color: var(--text);
+    background-color: var(--cs-blue);
 
-    border: 0;
+    border: 1px solid var(--border);
+    border-radius: 5px;
 }
 
 button:hover {
