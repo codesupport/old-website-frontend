@@ -59,15 +59,15 @@ class GitHubRepositoriesFeed extends Component {
                 {github_repositories.length > 0 ? github_repositories.map((repo) => (
                     <a className="github-repo-link" href={repo.url} target="_blank" key={repo.id}>
                         <Card title={repo.name} description={repo.description}>
-                            <Tag text={repo.language || "No Language"} />
-                            <Tag text={`${repo.stars} Stars`} />
-                            <Tag text={`${repo.watches} Watches`} />
-                            <Tag text={`${repo.forks} Forks`} />
+                            <Tag text={repo.language || "No Language"}/>
+                            <Tag text={`${repo.stars} Stars`}/>
+                            <Tag text={`${repo.watches} Watches`}/>
+                            <Tag text={`${repo.forks} Forks`}/>
                         </Card>
                     </a>
                 )) : account ?
-                    `${user} has no public repositories.` :
-                    `${user} has not connected their GitHub account.`
+                    <p>{user} has no public repositories.</p> :
+                    <p>{user} has not connected their GitHub account.</p>
                 }
             </section>
         );

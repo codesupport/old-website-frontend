@@ -41,6 +41,7 @@ class ProfileFeed extends Component {
     }
 
     render() {
+        const {user} = this;
         const {articles} = this.state;
 
         return (
@@ -48,7 +49,7 @@ class ProfileFeed extends Component {
                 <h2>
                     Feed
                 </h2>
-                {articles.map((article) => (
+                {articles.length > 0 ? articles.map((article) => (
                     <Card
                         key={article.id}
                         title={article.title}
@@ -58,7 +59,7 @@ class ProfileFeed extends Component {
                             Continue Reading
                         </button>
                     </Card>
-                ))}
+                )) : <p>There is no content to display in {user}'s feed.</p>}
             </section>
         );
     }

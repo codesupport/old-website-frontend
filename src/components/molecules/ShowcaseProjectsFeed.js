@@ -59,7 +59,7 @@ class ShowcaseProjectsFeed extends Component {
                     <Card title={post.name} description={post.description} key={post.id}>
                         <Tag text={post.language} />
                     </Card>
-                )) : `${user} has no showcased projects.`}
+                )) : <p>{user} has no showcased projects.</p>}
             </section>
         );
     }
