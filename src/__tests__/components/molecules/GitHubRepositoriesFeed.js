@@ -7,12 +7,24 @@ describe("GitHubRepositoriesFeed", () => {
     describe("render()", () => {
         let component;
 
-        beforeAll(() => component = mount(<GitHubRepositoriesFeed user="ExampleUser" account={{
-            username: "ExampleUser"
+        beforeAll(() => component = mount(<GitHubRepositoriesFeed profile={{
+            alias: "ExampleUser",
+            connected_accounts: {
+                github: {
+                    username: "ExampleUser"
+                }
+            }
         }} />));
 
         it("states that the user has not connected their github account if none is supplied", () => {
-            component = mount(<GitHubRepositoriesFeed user="ExampleUser" account={undefined} />);
+            component = mount(<GitHubRepositoriesFeed profile={{
+                alias: "ExampleUser",
+                connected_accounts: {
+                    github: {
+                        username: undefined
+                    }
+                }
+            }} />);
 
             expect(component.children().find(".card")).toHaveLength(0);
             expect(component.children().find("p")).toHaveLength(1);
