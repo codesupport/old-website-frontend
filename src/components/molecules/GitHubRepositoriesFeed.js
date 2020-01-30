@@ -5,30 +5,15 @@ import Tag from "../atoms/Tag";
 import config from "../../config";
 
 import "../../css/molecules/githubrepositoriesfeed.css";
+import {GitHub} from "../../services/GitHubService";
 
 class GitHubRepositoriesFeed extends Component {
     state = {
         github_repositories: []
     };
 
-    async getGitHubProjects(user) {
-        const api = config["github-api"];
-
-        // const request = await fetch(`${api}/user/v1/github-repos/${user}`);
-        // const data = await request.json();
-
-        // temp data until endpoint is real
-        const data = [{
-            id: "1",
-            name: "Advent of Code",
-            updated_at: "2019-12-02T19:48:06Z",
-            description: "My answers to the Advent of Code challenges.",
-            url: "https://github.com/LamboCreeper/Advent-of-Code",
-            stars: 2,
-            watches: 1,
-            forks: 0,
-            language: "Python"
-        }];
+    async getGitHubProjects(username) {
+        const data = await GitHub.getUsersRepos(username);
 
         this.setState({
             github_repositories: data.sort((a, b) => {
