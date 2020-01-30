@@ -17,3 +17,11 @@ jobs:
         run: |
           npm i
           npm run build
+  coverage-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Uploads coverage to Codacy
+        run: |
+          npm i
+          CI=true npm test -- --coverage && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage --token ${{ secrets.CODACY_TOKEN }}
