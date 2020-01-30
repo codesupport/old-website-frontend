@@ -13,6 +13,7 @@ This repository contains the frontend for the CodeSupport Website. The project i
 - [React FontAwesome](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
 - [Font Awesome SVG Core](https://www.npmjs.com/package/@fortawesome/fontawesome-svg-core)
 - [Free Brands SVG Icons](https://www.npmjs.com/package/@fortawesome/free-brands-svg-icons)
+- [Axios](https://www.npmjs.com/package/axios)
 
 ### Development
 - [Jest DOM](https://www.npmjs.com/package/@testing-library/jest-dom)
