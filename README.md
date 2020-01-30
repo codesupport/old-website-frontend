@@ -1,6 +1,7 @@
 # CodeSupport Website Frontend
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee8074eaddd14c0286fefe29a572adcc)](https://app.codacy.com/gh/codesupport/website-frontend?utm_source=github.com&utm_medium=referral&utm_content=codesupport/website-frontend&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/0c8dfe251ad54d059a8dcb1c983447ee)](https://www.codacy.com/gh/codesupport/website-frontend?utm_source=github.com&utm_medium=referral&utm_content=codesupport/website-frontend&utm_campaign=Badge_Coverage)
 [![dependencies Status](https://david-dm.org/codesupport/website-frontend/status.svg)](https://david-dm.org/codesupport/website-frontend)
 [![devDependencies Status](https://david-dm.org/codesupport/website-frontend/dev-status.svg)](https://david-dm.org/codesupport/website-frontend?type=dev)
 
