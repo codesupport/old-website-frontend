@@ -24,4 +24,4 @@ jobs:
       - name: Uploads coverage to Codacy
         run: |
           npm i
-          CI=true npm test -- --coverage && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage --accountToken $CODACY_TOKEN
+          CI=true npm test -- --coverage && cat ./coverage/lcov.info | codacy-coverage --token $CODACY_TOKEN
