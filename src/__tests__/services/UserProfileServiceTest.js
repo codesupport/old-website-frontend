@@ -1,5 +1,8 @@
 import axios from "axios";
 import {UserProfile} from "../../services/UserProfileService";
+import config from "../../config";
+
+const api = config["backend-api"];
 
 jest.mock("axios");
 
@@ -17,7 +20,7 @@ describe("UserProfileService", () => {
             await UserProfile.getByAlias("ExampleAlias");
 
             expect(axios.get).toHaveBeenCalledTimes(1);
-            expect(axios.get).toHaveBeenCalledWith("http://localhost:8080/api/user/v1/profiles/?alias=ExampleAlias");
+            expect(axios.get).toHaveBeenCalledWith(`${api}/user/v1/profiles/?alias=ExampleAlias`);
         });
 
         it("returns the user profile object", async () => {
