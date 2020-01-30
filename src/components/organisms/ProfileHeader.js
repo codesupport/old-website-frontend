@@ -1,12 +1,14 @@
 import React, {Component} from "react";
-import {Redirect} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faDiscord, faGithub, faTwitter} from "@fortawesome/free-brands-svg-icons";
 
+import {UserProfile} from "../../services/UserProfileService";
+import redirect from "../../helpers/redirect";
+
 import Card from "../molecules/Card";
-import config from "../../config";
 
 import "../../css/organisms/profileheader.css";
+
 
 class ProfileHeader extends Component {
     state = {
@@ -16,44 +18,14 @@ class ProfileHeader extends Component {
 
     async getProfile(alias) {
         try {
-            const api = config["backend-api"];
-            const response = await fetch(`${api}/user/v1/profiles/?alias=${alias}`);
+            const profile = await UserProfile.getByAlias(alias);
 
-            if (response.ok) {
-                const data = await response.json();
-                const profile = data.response[0];
-
-                this.setState({
-                    loaded: true,
-                    profile: {
-                        alias: profile.alias,
-                        avatar: profile.avatarLink,
-                        bio: profile.biography,
-                        country: profile.countryId,
-                        job: {
-                            title: profile.jobTitle || "Full Stack Developer",
-                            company: profile.jobCompany || ""
-                        },
-                        roles: [profile.role.label],
-                        awards: profile.userAward,
-                        connected_accounts: {
-                            discord: {
-                                id: profile.discordId,
-                                username: profile.discordUsername || "LamboCreeper",
-                                discriminator: profile.discordDiscriminator || "6510"
-                            },
-                            github: {
-                                username: profile.githubUsername || "LamboCreeper"
-                            }
-                        }
-                    }
-                });
-            } else {
-                window.location.href = "/404";
-            }
+            this.setState({
+                loaded: true,
+                profile
+            });
         } catch (error) {
-            alert("There was a problem getting this user's profile.");
-            console.error(error);
+            redirect("/404");
         }
     }
 
