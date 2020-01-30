@@ -23,6 +23,7 @@ This repository contains the frontend for the CodeSupport Website. The project i
 - [User Event](https://www.npmjs.com/package/@testing-library/user-event)
 - [Enzyme](https://www.npmjs.com/package/enzyme)
 - [Enzyme Adapter for React 16](https://www.npmjs.com/package/enzyme-adapter-react-16)
+- [Codacy Coverage](https://www.npmjs.com/package/codacy-coverage)
 
 ## Setup
 1. Navigate into the repository on your computer and run `npm i`
