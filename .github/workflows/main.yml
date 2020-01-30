@@ -25,4 +25,4 @@ jobs:
         run: |
           npm i
           CI=true npm test -- --coverage
-          cat ./coverage/lcov.info | ./node_modules/codacy-coverage/bin/codacy-coverage.js --token $CODACY_TOKEN
+          cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage --token $CODACY_TOKEN
