@@ -38,21 +38,30 @@ class GitHubRepositoriesFeed extends Component {
     }
 
     componentDidMount() {
-        const {account, user} = this.props;
+        const {profile} = this.props;
+        const account = profile.connected_accounts.github;
 
-        if (account) this.getGitHubProjects(user);
+        if (account.username) this.getGitHubProjects(account.username);
     }
 
     render() {
-        const {user, account} = this.props;
+        const {alias, connected_accounts} = this.props.profile;
+        const account = connected_accounts.github;
         const {github_repositories} = this.state;
+
         return (
             <section id="github-repositories">
                 <h2>
                     GitHub Repositories
                 </h2>
                 {github_repositories.length > 0 ? github_repositories.map((repo) => (
-                    <a className="github-repo-link" href={repo.url} target="_blank" key={repo.id}>
+                    <a
+                        className="github-repo-link"
+                        href={repo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={repo.id}
+                    >
                         <Card title={repo.name} description={repo.description}>
                             <Tag text={repo.language || "No Language"}/>
                             <Tag text={`${repo.stars} Stars`}/>
@@ -60,9 +69,9 @@ class GitHubRepositoriesFeed extends Component {
                             <Tag text={`${repo.forks} Forks`}/>
                         </Card>
                     </a>
-                )) : account ?
-                    <p>{user} has no public repositories.</p> :
-                    <p>{user} has not connected their GitHub account.</p>
+                )) : account.username ?
+                    <p>{alias} has no public repositories.</p> :
+                    <p>{alias} has not connected their GitHub account.</p>
                 }
             </section>
         );

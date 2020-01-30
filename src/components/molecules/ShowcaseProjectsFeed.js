@@ -41,7 +41,7 @@ class ShowcaseProjectsFeed extends Component {
     }
 
     render() {
-        const {user} = this.props;
+        const {alias} = this.props;
         const {showcase_projects} = this.state;
 
         return (
@@ -53,7 +53,7 @@ class ShowcaseProjectsFeed extends Component {
                     <Card title={post.name} description={post.description} key={post.id}>
                         <Tag text={post.language} />
                     </Card>
-                )) : <p>{user} has no showcased projects.</p>}
+                )) : <p>{alias} has no showcased projects.</p>}
             </section>
         );
     }

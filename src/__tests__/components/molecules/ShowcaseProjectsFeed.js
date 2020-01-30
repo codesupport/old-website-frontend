@@ -7,7 +7,7 @@ describe("ShowcaseProjectsFeed", () => {
     describe("render()", () => {
         let component;
 
-        beforeAll(() => component = mount(<ShowcaseProjectsFeed user="ExampleUser" />));
+        beforeAll(() => component = mount(<ShowcaseProjectsFeed alias="ExampleUser" />));
 
         it("states that user has no showcase posts if they have none", () => {
             component.setState({
