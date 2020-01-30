@@ -46,5 +46,6 @@ We are using [Jest](https://jestjs.io) with [Enzyme](https://airbnb.io/enzyme/) 
 ## Commands
 - To start the React app use `npm start`
 - To test the React app use `npm test`
+    - Use `npm test -- --coverage` to get a coverage report
 
 **Any Questions?** Feel free to mention @LamboCreeper#6510 in the [CodeSupport Discord](https://discord.gg/Hn9SETt).
