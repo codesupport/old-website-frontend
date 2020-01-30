@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {Redirect} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faDiscord, faGithub, faTwitter} from "@fortawesome/free-brands-svg-icons";
 
@@ -14,41 +15,46 @@ class ProfileHeader extends Component {
     };
 
     async getProfile(alias) {
-        const api = config["backend-api"];
-        const id = 1; // temp
-        // const id = await this.getUserID(alias);
-        //
-        // const request = await fetch(`${api}/user/v1/users/${id}`);
-        // const data = await request.json();
+        try {
+            const api = config["backend-api"];
+            const response = await fetch(`${api}/user/v1/profiles/?alias=${alias}`);
 
-        const data = {
-            alias: "Lambo",
-            avatar: `${config["firebase-bucket-url"]}/avatars%2F2.png?alt=media`,
-            bio: "Founder of CodeSupport. This is even more text for my awesome biography.",
-            job: {
-                title: "Full Stack Developer",
-                company: "Awesome Company"
-            },
-            roles: ["moderator", "mod-assistant", "verified", "supporter", "contributor"],
-            connected_accounts: {
-                discord: {
-                    username: "LamboCreeper",
-                    discriminator: 6510
-                },
-                github: {
-                    username: "LamboCreeper"
-                },
-                twitter: {
-                    username: "LamboCreeper"
-                }
+            if (response.ok) {
+                const data = await response.json();
+                const profile = data.response[0];
+
+                this.setState({
+                    loaded: true,
+                    profile: {
+                        alias: profile.alias,
+                        avatar: profile.avatarLink,
+                        bio: profile.biography,
+                        country: profile.countryId,
+                        job: {
+                            title: profile.jobTitle || "Full Stack Developer",
+                            company: profile.jobCompany || ""
+                        },
+                        roles: [profile.role.label],
+                        awards: profile.userAward,
+                        connected_accounts: {
+                            discord: {
+                                id: profile.discordId,
+                                username: profile.discordUsername || "LamboCreeper",
+                                discriminator: profile.discordDiscriminator || "6510"
+                            },
+                            github: {
+                                username: profile.githubUsername || "LamboCreeper"
+                            }
+                        }
+                    }
+                });
+            } else {
+                window.location.href = "/404";
             }
-        };
-
-
-        this.setState({
-            loaded: true,
-            profile: data
-        });
+        } catch (error) {
+            alert("There was a problem getting this user's profile.");
+            console.error(error);
+        }
     }
 
     componentDidMount() {
@@ -83,7 +89,7 @@ class ProfileHeader extends Component {
                                     }
                                     <p id="profile-roles">
                                         {profile.roles && profile.roles.map((role) => (
-                                            <span className="profile-role" role-level={role} key={role}>
+                                            <span className="profile-role" role-level={role.toLowerCase()} key={role}>
                                                 {role.toUpperCase()}
                                             </span>
                                         ))}
