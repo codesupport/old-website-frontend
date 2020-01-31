@@ -112,7 +112,7 @@ class Resources extends Component {
         const {resources, status} = this.state;
 
         if (status === ERROR_MESSAGE) {
-            return <ErrorTemplate message={status} />
+            return <ErrorTemplate message={status} />;
         }
 
         return (
