@@ -17,7 +17,7 @@ class GitHubRepositoriesFeed extends Component {
 
         this.setState({
             github_repositories: data.sort((a, b) => {
-                return new Date(a.updated_at) > new Date(b.updated_at) ? -1 : 1
+                return new Date(a.updated_at) > new Date(b.updated_at) ? -1 : 1;
             }).slice(0, 5)
         });
     }
@@ -26,7 +26,9 @@ class GitHubRepositoriesFeed extends Component {
         const {profile} = this.props;
         const account = profile.connected_accounts.github;
 
-        if (account.username) this.getGitHubProjects(account.username);
+        if (account.username) {
+            this.getGitHubProjects(account.username);
+        }
     }
 
     render() {
