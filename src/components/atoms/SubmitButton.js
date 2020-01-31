@@ -7,7 +7,7 @@ function SubmitButton({text, preventDefault}) {
         if (preventDefault) {
             event.preventDefault();
         }
-    }}>{text}</button>
+    }}>{text}</button>;
 }
 
 export default SubmitButton;

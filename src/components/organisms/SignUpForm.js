@@ -67,7 +67,7 @@ function SignUpForm({modalToggle}) {
                  />
             </form>
         </article>
-    )
+    );
 }
 
 export default SignUpForm;

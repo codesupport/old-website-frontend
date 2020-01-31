@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 import "../../css/molecules/card.css";
 
 function Card({title, description, children}) {

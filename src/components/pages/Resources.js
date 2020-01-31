@@ -52,7 +52,7 @@ class Resources extends Component {
             });
 
             if (["true", "false"].includes(this.state.filterPrice)) {
-                resources = await resources.filter(resource => resource.free === JSON.parse(this.state.filterPrice));
+                resources = await resources.filter((resource) => resource.free === JSON.parse(this.state.filterPrice));
             }
 
             this.setState({resources, constantResources: resources});
@@ -98,7 +98,7 @@ class Resources extends Component {
             }
 
             this.setState({
-                status: undefined,
+                status: null,
                 resources: resourcesThatMatchQuery
             });
         }
@@ -140,8 +140,9 @@ class Resources extends Component {
                                 Filter by category
                                 <select id="filter-category" onChange={this.filterResources} value={this.state.filterResources}>
                                     <option value="Show All" key="all">Show All</option>
-                                    {config["resource-categories"].map(category => <option
-                                        value={category} key={category}>{category}</option>)}
+                                    {config["resource-categories"].map((category) => (
+                                        <option value={category} key={category}>{category}</option>
+                                    ))}
                                 </select>
                             </label>
                             <label>

@@ -13,26 +13,22 @@ class GitHubRepositoriesFeed extends Component {
     };
 
     async getGitHubProjects(username) {
-        try {
-            const data = await GitHub.getUsersRepos(username);
+        const data = await GitHub.getUsersRepos(username);
 
-            this.setState({
-                github_repositories: data.sort((a, b) => {
-                    return new Date(a.updated_at) > new Date(b.updated_at) ? -1 : 1
-                }).slice(0, 5)
-            });
-        } catch (error) {
-            this.setState({
-                error
-            });
-        }
+        this.setState({
+            github_repositories: data.sort((a, b) => {
+                return new Date(a.updated_at) > new Date(b.updated_at) ? -1 : 1;
+            }).slice(0, 5)
+        });
     }
 
     componentDidMount() {
         const {profile} = this.props;
         const account = profile.connected_accounts.github;
 
-        if (account.username) this.getGitHubProjects(account.username);
+        if (account.username) {
+            this.getGitHubProjects(account.username);
+        }
     }
 
     render() {
