@@ -6,6 +6,9 @@ import Card from "../molecules/Card";
 import CardGroup from "../organisms/CardGroup";
 
 import "../../css/pages/resources.css";
+import ErrorTemplate from "../templates/ErrorTemplate";
+
+const ERROR_MESSAGE = "There was a problem loading the resources.";
 
 class Resources extends Component {
     state = {
@@ -54,10 +57,8 @@ class Resources extends Component {
 
             this.setState({resources, constantResources: resources});
         } catch (error) {
-            console.error(error);
-
             this.setState({
-                status: "There was an error loading the resources."
+                status: ERROR_MESSAGE
             });
         }
     }
@@ -109,6 +110,10 @@ class Resources extends Component {
 
     render() {
         const {resources, status} = this.state;
+
+        if (status === ERROR_MESSAGE) {
+            return <ErrorTemplate message={status} />
+        }
 
         return (
             <>

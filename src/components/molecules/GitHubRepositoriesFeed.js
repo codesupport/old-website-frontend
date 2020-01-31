@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 
+import {GitHub} from "../../services/GitHubService";
+
 import Card from "./Card";
 import Tag from "../atoms/Tag";
-import config from "../../config";
 
 import "../../css/molecules/githubrepositoriesfeed.css";
-import {GitHub} from "../../services/GitHubService";
 
 class GitHubRepositoriesFeed extends Component {
     state = {
@@ -13,13 +13,19 @@ class GitHubRepositoriesFeed extends Component {
     };
 
     async getGitHubProjects(username) {
-        const data = await GitHub.getUsersRepos(username);
+        try {
+            const data = await GitHub.getUsersRepos(username);
 
-        this.setState({
-            github_repositories: data.sort((a, b) => {
-                return new Date(a.updated_at) > new Date(b.updated_at) ? -1 : 1
-            }).slice(0, 5)
-        });
+            this.setState({
+                github_repositories: data.sort((a, b) => {
+                    return new Date(a.updated_at) > new Date(b.updated_at) ? -1 : 1
+                }).slice(0, 5)
+            });
+        } catch (error) {
+            this.setState({
+                error
+            });
+        }
     }
 
     componentDidMount() {

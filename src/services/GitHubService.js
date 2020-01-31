@@ -20,7 +20,6 @@ class GitHubService {
                 language: repo.language
             }));
         } catch (error) {
-            console.error(error);
             throw new Error(`There was an error getting ${username}'s GitHub repositories.`);
         }
     }
