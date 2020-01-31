@@ -2,13 +2,24 @@ import React from "react";
 import {mount, shallow} from "enzyme";
 
 import Resources from "../../../components/pages/Resources";
+import ResourcesService from "../../../services/ResourcesService";
 
 describe("Resources", () => {
+    let component;
+
+    beforeEach(() => component = shallow(<Resources />));
+
+    describe("getResources()", () => {
+        it("gets resources from the ResourceService", () => {
+            const spy = jest.spyOn(ResourcesService, "getResources");
+
+            component = mount(<Resources/>);
+
+            expect(spy).toHaveBeenCalled();
+        });
+    });
+
     describe("render()", () => {
-        let component;
-
-        beforeAll(() => component = shallow(<Resources />));
-
         it("updates the filterResources state on category change", () => {
             component.find("#filter-category").simulate("change", {
                 target: {
