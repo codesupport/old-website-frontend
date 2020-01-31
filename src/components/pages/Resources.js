@@ -1,13 +1,14 @@
 import React, {Component} from "react";
 
+import ResourcesService from "../../services/ResourcesService";
 import config from "../../config";
 
 import Card from "../molecules/Card";
 import CardGroup from "../organisms/CardGroup";
+import ErrorTemplate from "../templates/ErrorTemplate";
 
 import "../../css/pages/resources.css";
-import ErrorTemplate from "../templates/ErrorTemplate";
-import ResourcesService from "../../services/ResourcesService";
+import sortArrayBy from "../../helpers/sortArrayBy";
 
 const ERROR_MESSAGE = "There was a problem loading the resources.";
 
@@ -44,12 +45,7 @@ class Resources extends Component {
                 resources = resources.concat(data);
             }
 
-            resources = resources.sort((a, b) => {
-                let x = a.name;
-                let y = b.name;
-
-                return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-            });
+            resources = sortArrayBy(resources, "name");
 
             if (["true", "false"].includes(this.state.filterPrice)) {
                 resources = await resources.filter((resource) => resource.free === JSON.parse(this.state.filterPrice));
