@@ -5,7 +5,7 @@ class ResourcesService {
     api = config["resources-api"];
 
     async getResources(category) {
-            try {
+        try {
             const {data} = await axios.get(`${this.api}/${category.toLowerCase()}.json`);
 
             return data;
