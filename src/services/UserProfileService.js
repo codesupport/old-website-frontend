@@ -31,7 +31,6 @@ class UserProfileService {
                 }
             };
         } catch (error) {
-            console.error(error);
             throw new Error(`There was an error getting ${alias}'s UserProfile.`);
         }
     }
