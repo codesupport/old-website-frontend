@@ -9,6 +9,7 @@ import GitHubRepositoriesFeed from "../molecules/GitHubRepositoriesFeed";
 import ProfileHeader from "../organisms/ProfileHeader";
 
 import "../../css/pages/profile.css";
+import ErrorTemplate from "../templates/ErrorTemplate";
 
 class Profile extends Component {
     state = {
@@ -25,7 +26,9 @@ class Profile extends Component {
                 profile
             });
         } catch (error) {
-            redirect("/404");
+            this.setState({
+                error
+            });
         }
     }
 
@@ -34,7 +37,11 @@ class Profile extends Component {
     }
 
     render() {
-        const {loaded, profile} = this.state;
+        const {error, loaded, profile} = this.state;
+
+        if (error) {
+            return <ErrorTemplate message={error.message} />;
+        }
 
         if (loaded) {
             return (
@@ -53,9 +60,9 @@ class Profile extends Component {
                     </div>
                 </>
             );
-        } else {
-            return <p>Loading..</p>;
         }
+
+        return <p>Loading..</p>;
     }
 }
 

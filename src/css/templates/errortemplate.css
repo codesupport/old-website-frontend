@@ -1,0 +1,26 @@
+.error-template {
+    width: 100vw;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    position: fixed;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    text-align: center;
+}
+
+.error p {
+    margin: 25px;
+}
+
+.error a {
+    color: inherit;
+    text-decoration: none;
+}

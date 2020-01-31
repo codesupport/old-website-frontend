@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 
+import {GitHub} from "../../services/GitHubService";
+
 import Card from "./Card";
 import Tag from "../atoms/Tag";
-import config from "../../config";
 
 import "../../css/molecules/githubrepositoriesfeed.css";
-import {GitHub} from "../../services/GitHubService";
 
 class GitHubRepositoriesFeed extends Component {
     state = {
