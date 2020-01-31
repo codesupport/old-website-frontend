@@ -7,6 +7,7 @@ import CardGroup from "../organisms/CardGroup";
 
 import "../../css/pages/resources.css";
 import ErrorTemplate from "../templates/ErrorTemplate";
+import ResourcesService from "../../services/ResourcesService";
 
 const ERROR_MESSAGE = "There was a problem loading the resources.";
 
@@ -31,8 +32,7 @@ class Resources extends Component {
             }
 
             for (const category of categories) {
-                const request = await fetch(`${config["resources-api"]}/${category.toLowerCase()}.json`);
-                const data = await request.json();
+                const data = await ResourcesService.getResources(category);
 
                 data.forEach((resource, i) => {
                     data[resource] = {
