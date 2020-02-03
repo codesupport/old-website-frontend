@@ -32,12 +32,14 @@ class Navigation extends Component {
                     <div className="nav-container">
                         <ul className="nav-left">
                             <li>
-                                <img
-                                    className="logo"
-                                    alt="CodeSupport Logo"
-                                    src={`${config["firebase-bucket-url"]}/logo.png?alt=media`}
-                                    draggable="false"
-                                />
+                                <Link to="/">
+                                    <img
+                                        className="logo"
+                                        alt="CodeSupport Logo"
+                                        src={`${config["firebase-bucket-url"]}/logo.png?alt=media`}
+                                        draggable="false"
+                                    />
+                                </Link>
                             </li>
                             <li>
                                 <Link to="/">
@@ -57,7 +59,7 @@ class Navigation extends Component {
                         </ul>
                         <ul className="nav-right">
                             <li onClick={this.toggleLoginModal}>
-                                <Link>
+                                <Link to="#">
                                     {!loggedIn ? "Sign Up" : ""}
                                 </Link>
                             </li>
