@@ -33,7 +33,7 @@ This repository contains the frontend for the CodeSupport Website. The project i
 2. Start the React app with `npm start`
 3. Navigate to [http://localhost:3000](http://localhost:3000) in your browser
 
-You may also need to clone the [website backend](https://github.com/codesupport/website-backend) for the website to fully function as expected.
+**Want an easier setup?** Pull down our [website development environment](https://github.com/codesupport/website-dev-env) and quickly start working.
 
 ## Structure
 We're using [Atomic Design](http://atomicdesign.bradfrost.com) to keep our folders organised. There are three main folders:
