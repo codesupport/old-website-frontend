@@ -7,13 +7,17 @@ import ResourcesService from "../../../services/ResourcesService";
 describe("Resources", () => {
     let component;
 
-    beforeEach(() => component = shallow(<Resources />));
+    beforeEach(() => component = shallow(<Resources location={{
+        search: undefined
+    }}/>));
 
     describe("getResources()", () => {
         it("gets resources from the ResourceService", () => {
             const spy = jest.spyOn(ResourcesService, "getResources");
 
-            component = mount(<Resources/>);
+            component = mount(<Resources location={{
+                search: undefined
+            }}/>);
 
             expect(spy).toHaveBeenCalled();
         });
