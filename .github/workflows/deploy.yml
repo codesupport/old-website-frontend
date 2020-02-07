@@ -12,7 +12,9 @@ jobs:
         run: |
           npm i
           npm run build
+      - name: Install Firebase Tools
+        run: |
+          - npm i firebase-tools
       - name: Deploy to Firebase
         run: |
-          npm i firebase-tools
           ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --project codesupport-development
