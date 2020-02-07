@@ -5,7 +5,7 @@ import "../../css/pages/index.css";
 function Index() {
     return (
         <>
-            <section id="intro">
+            <section className="intro">
                 <div className="container">
                     <div className="content">
                         <h1>

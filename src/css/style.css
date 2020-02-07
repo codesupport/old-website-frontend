@@ -92,7 +92,7 @@ select {
     border: 0;
 }
 
-#intro {
+.intro {
     height: 300px;
 
     margin-bottom: 50px;

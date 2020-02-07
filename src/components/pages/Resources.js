@@ -113,7 +113,7 @@ class Resources extends Component {
 
         return (
             <>
-                <header id="intro">
+                <header className="intro">
                     <div className="container">
                         <div className="content">
                             <h1>
