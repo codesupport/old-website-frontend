@@ -17,4 +17,4 @@ jobs:
           npm i firebase-tools
       - name: Deploy to Firebase
         run: |
-          ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --project codesupport-development
+          ./node_modules/.bin/firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}" --project codesupport-development
