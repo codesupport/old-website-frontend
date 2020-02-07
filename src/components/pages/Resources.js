@@ -9,6 +9,7 @@ import ErrorTemplate from "../templates/ErrorTemplate";
 
 import "../../css/pages/resources.css";
 import sortArrayBy from "../../helpers/sortArrayBy";
+import getQueries from "../../helpers/getQueries";
 
 const ERROR_MESSAGE = "There was a problem loading the resources.";
 
@@ -23,6 +24,14 @@ class Resources extends Component {
 
     async getResources() {
         try {
+            const {category} = getQueries(this.props.location.search);
+
+            if (category) {
+                await this.setState({
+                    filterResources: category
+                });
+            }
+
             let categories = [];
             let resources = [];
 
