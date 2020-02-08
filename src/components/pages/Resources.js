@@ -9,6 +9,7 @@ import ErrorTemplate from "../templates/ErrorTemplate";
 
 import "../../css/pages/resources.css";
 import sortArrayBy from "../../helpers/sortArrayBy";
+import IntroHero from "../molecules/IntroHero";
 import getQueries from "../../helpers/getQueries";
 
 const ERROR_MESSAGE = "There was a problem loading the resources.";
@@ -122,17 +123,11 @@ class Resources extends Component {
 
         return (
             <>
-                <header id="intro">
-                    <div className="container">
-                        <div className="content">
-                            <h1>
-                                Resources
-                            </h1>
-                            <p>
-                                A collection of programming resources curated by the CodeSupport community.
-                            </p>
-                        </div>
-                    </div>
+                <header>
+                    <IntroHero
+                        title="Resources"
+                        description="A collection of programming resources curated by the CodeSupport community."
+                    />
                 </header>
                 <section id="filter-resources" role="search">
                     <div className="container">
