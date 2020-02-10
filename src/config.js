@@ -8,14 +8,21 @@ const config = {
         "resources-api": resourcesAPI,
         "resource-categories": resourceCategories,
         "github-api": githubAPI,
-        "backend-api": "http://api.codesupport.dev/api"
+        "backend-api": "http://api.codesupport.dev/api",
+        "firebase": {}
     },
     "development": {
         "firebase-bucket-url": "https://firebasestorage.googleapis.com/v0/b/codesupport-development.appspot.com/o",
         "resources-api": resourcesAPI,
         "resource-categories": resourceCategories,
         "github-api": githubAPI,
-        "backend-api": "http://localhost:8080/api"
+        "backend-api": "http://localhost:8080/api",
+        "firebase": {
+            "apiKey": "AIzaSyBshIWr5s-dU8ugQTHKJstI4E5ZyLi_V6g",
+            "projectId": "codesupport-development",
+            "appId": "1:751174037565:web:a57acda7b2d688327e3a54",
+            "measurementId": "G-XHEJ625R85"
+        }
     }
 };
 

@@ -7,6 +7,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "axios": "^0.19.2",
+    "firebase": "^7.8.1",
     "query-string": "^6.10.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

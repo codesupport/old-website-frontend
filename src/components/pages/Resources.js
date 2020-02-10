@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+import {analytics} from "../../services/FirebaseService";
 import ResourcesService from "../../services/ResourcesService";
 import config from "../../config";
 
@@ -111,6 +112,7 @@ class Resources extends Component {
     };
 
     componentDidMount() {
+        analytics.logEvent("resources_page_view");
         this.getResources();
     }
 
