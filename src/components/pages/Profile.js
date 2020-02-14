@@ -10,6 +10,7 @@ import ProfileHeader from "../organisms/ProfileHeader";
 
 import "../../css/pages/profile.css";
 import ErrorTemplate from "../templates/ErrorTemplate";
+import {analytics} from "../../services/FirebaseService";
 
 class Profile extends Component {
     state = {
@@ -33,7 +34,11 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        this.getProfile(this.props.match.params.alias);
+        const {alias} = this.props.match.params;
+        analytics.logEvent("profile_page_view", {
+            alias
+        });
+        this.getProfile(alias);
     }
 
     render() {
