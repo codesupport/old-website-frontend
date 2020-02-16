@@ -1,4 +1,4 @@
-const resourceCategories = ["Hosting", "JavaScript", "CSS", "Icons", "Python", "Software", "CSharp", "Fonts", "UI"];
+const resourceCategories = ["Hosting", "JavaScript", "CSS", "Icons", "Python", "Software", "CSharp", "Fonts", "UI", "HTML"];
 const resourcesAPI = "https://codesupport.github.io/resources-api/categories";
 const githubAPI = "https://api.github.com";
 
