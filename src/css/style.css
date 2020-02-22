@@ -14,14 +14,14 @@
     --dark-mode: true;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-    :root {
-        --background: #11131E;
-        --foreground: #1d1f30;
-        --border: #0C0C0C;
-        --text: #E8E8E9;
-    }
-}
+/*@media screen and (prefers-color-scheme: dark) {*/
+/*    :root {*/
+/*        --background: #11131E;*/
+/*        --foreground: #1d1f30;*/
+/*        --border: #0C0C0C;*/
+/*        --text: #E8E8E9;*/
+/*    }*/
+/*}*/
 
 body {
     color: var(--text);
@@ -42,6 +42,7 @@ h1 {
 
 h2 {
     font-size: 25px;
+    margin-bottom: 10px;
 }
 
 button {
