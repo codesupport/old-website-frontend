@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {Helmet} from "react-helmet";
 
 import {analytics} from "../../services/FirebaseService";
 import ResourcesService from "../../services/ResourcesService";
@@ -125,6 +126,14 @@ class Resources extends Component {
 
         return (
             <>
+                <Helmet>
+                    <title>CodeSupport | Resources</title>
+                    <meta name="description" content="A collection of programming resources curated by the CodeSupport community." />
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:site" content="@codesupportdev" />
+                    <meta name="twitter:title" content="CodeSupport | Resources" />
+                    <meta name="twitter:description" content="A collection of programming resources curated by the CodeSupport community." />
+                </Helmet>
                 <header>
                     <IntroHero
                         title="Resources"

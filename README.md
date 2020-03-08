@@ -15,6 +15,7 @@ This repository contains the frontend for the CodeSupport Website. The project i
 - [React DOM](https://www.npmjs.com/package/react-dom)
 - [React Router DOM](https://www.npmjs.com/package/react-router-dom)
 - [React Scripts](https://www.npmjs.com/package/react-scripts)
+- [React Helmet](https://www.npmjs.com/package/react-helmet)
 - [React Font Awesome](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
 - [Font Awesome SVG Core](https://www.npmjs.com/package/@fortawesome/fontawesome-svg-core)
 - [Free Brands SVG Icons](https://www.npmjs.com/package/@fortawesome/free-brands-svg-icons)
