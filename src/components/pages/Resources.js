@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Helmet} from "react-helmet";
 
 import {analytics} from "../../services/FirebaseService";
 import ResourcesService from "../../services/ResourcesService";

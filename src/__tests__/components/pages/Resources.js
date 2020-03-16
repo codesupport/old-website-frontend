@@ -1,10 +1,13 @@
 import React from "react";
 import {mount, shallow} from "enzyme";
+import {analytics} from "../../../services/FirebaseService";
 
 import Resources from "../../../components/pages/Resources";
 import ResourcesService from "../../../services/ResourcesService";
 
-describe("Resources", () => {
+jest.mock("../../../services/FirebaseService");
+
+describe("Resources Page", () => {
     let component;
 
     beforeEach(() => component = shallow(<Resources location={{
@@ -20,6 +23,13 @@ describe("Resources", () => {
             }}/>);
 
             expect(spy).toHaveBeenCalled();
+        });
+    });
+
+    describe("componentDidMount()", () => {
+        it("calls analytics.logEvent()", () => {
+            expect(analytics.logEvent).toHaveBeenCalled();
+            expect(analytics.logEvent).toHaveBeenCalledWith("resources_page_view");
         });
     });
 
