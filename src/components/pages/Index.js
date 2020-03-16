@@ -1,7 +1,7 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 
-import "../../css/pages/index.css";
+import "../../css/pages/index.scss";
 import IntroHero from "../molecules/IntroHero";
 
 function Index() {

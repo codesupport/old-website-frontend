@@ -2,7 +2,7 @@ import React from "react";
 import LabelWithInput from "../molecules/LabelWithInput";
 import SubmitButton from "../atoms/SubmitButton";
 
-import "../../css/organisms/signupform.css";
+import "../../css/organisms/signupform.scss";
 
 function SignUpForm({modalToggle}) {
     return (

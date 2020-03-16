@@ -5,7 +5,7 @@ import {GitHub} from "../../services/GitHubService";
 import Card from "./Card";
 import Tag from "../atoms/Tag";
 
-import "../../css/molecules/githubrepositoriesfeed.css";
+import "../../css/molecules/githubrepositoriesfeed.scss";
 
 class GitHubRepositoriesFeed extends Component {
     state = {

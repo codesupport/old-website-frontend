@@ -4,7 +4,7 @@ import {faDiscord, faGithub} from "@fortawesome/free-brands-svg-icons";
 
 import Card from "../molecules/Card";
 
-import "../../css/organisms/profileheader.css";
+import "../../css/organisms/profileheader.scss";
 
 function ProfileHeader({profile}) {
     return (

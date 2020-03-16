@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../css/organisms/cardgroup.css";
+import "../../css/organisms/cardgroup.scss";
 
 function CardGroup({children}) {
     return (

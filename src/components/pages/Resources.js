@@ -9,7 +9,7 @@ import Card from "../molecules/Card";
 import CardGroup from "../organisms/CardGroup";
 import ErrorTemplate from "../templates/ErrorTemplate";
 
-import "../../css/pages/resources.css";
+import "../../css/pages/resources.scss";
 import sortArrayBy from "../../helpers/sortArrayBy";
 import IntroHero from "../molecules/IntroHero";
 import getQueries from "../../helpers/getQueries";

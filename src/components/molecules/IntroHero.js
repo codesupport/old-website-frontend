@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../css/molecules/introhero.css";
+import "../../css/molecules/introhero.scss";
 
 function IntroHero({title, description, button}) {
     return (

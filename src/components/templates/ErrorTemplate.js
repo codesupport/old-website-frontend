@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import "../../css/templates/errortemplate.css";
+import "../../css/templates/errortemplate.scss";
 
 function ErrorTemplate({message, code}) {
     return (

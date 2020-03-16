@@ -6,7 +6,7 @@ import config from "../../config";
 import SignUpForm from "../organisms/SignUpForm";
 import ModalContainer from "../templates/ModalContainer";
 
-import "../../css/molecules/navigation.css";
+import "../../css/molecules/navigation.scss";
 
 class Navigation extends Component {
     state = {

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/molecules/card.css";
+import "../../css/molecules/card.scss";
 
 function Card({title, description, children}) {
     return (

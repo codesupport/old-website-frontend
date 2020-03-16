@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-import "../../css/molecules/labelwithinput.css";
+import "../../css/molecules/labelwithinput.scss";
 
 class LabelWithInput extends Component {
     state = {

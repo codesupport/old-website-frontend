@@ -8,7 +8,7 @@ import ShowcaseProjectsFeed from "../molecules/ShowcaseProjectsFeed";
 import GitHubRepositoriesFeed from "../molecules/GitHubRepositoriesFeed";
 import ProfileHeader from "../organisms/ProfileHeader";
 
-import "../../css/pages/profile.css";
+import "../../css/pages/profile.scss";
 import ErrorTemplate from "../templates/ErrorTemplate";
 import {analytics} from "../../services/FirebaseService";
 

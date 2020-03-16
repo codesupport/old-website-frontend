@@ -8,7 +8,7 @@ import Community from "./components/pages/Community";
 import Resources from "./components/pages/Resources";
 import Profile from "./components/pages/Profile";
 
-import "./css/style.css";
+import "./css/style.scss";
 
 function Router() {
     return (

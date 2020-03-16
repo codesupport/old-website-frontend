@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../css/atoms/submitbutton.css";
+import "../../css/atoms/submitbutton.scss";
 
 function SubmitButton({text, preventDefault}) {
     return <button type="submit" onClick={(event) => {
