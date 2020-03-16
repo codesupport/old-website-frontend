@@ -8,12 +8,9 @@ import Community from "./components/pages/Community";
 import Resources from "./components/pages/Resources";
 import Profile from "./components/pages/Profile";
 
-import "./css/style.css";
-
 function Router() {
     return (
         <BrowserRouter>
-            <Navigation />
             <Switch>
                 <Route exact path="/" component={Index} />
                 <Route exact path="/community" component={Community} />

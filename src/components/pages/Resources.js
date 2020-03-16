@@ -13,6 +13,7 @@ import "../../css/pages/resources.css";
 import sortArrayBy from "../../helpers/sortArrayBy";
 import IntroHero from "../molecules/IntroHero";
 import getQueries from "../../helpers/getQueries";
+import PageTemplate from "../templates/PageTemplate";
 
 const ERROR_MESSAGE = "There was a problem loading the resources.";
 
@@ -125,15 +126,7 @@ class Resources extends Component {
         }
 
         return (
-            <>
-                <Helmet>
-                    <title>CodeSupport | Resources</title>
-                    <meta name="description" content="A collection of programming resources curated by the CodeSupport community." />
-                    <meta name="twitter:card" content="summary" />
-                    <meta name="twitter:site" content="@codesupportdev" />
-                    <meta name="twitter:title" content="CodeSupport | Resources" />
-                    <meta name="twitter:description" content="A collection of programming resources curated by the CodeSupport community." />
-                </Helmet>
+            <PageTemplate page="Resources">
                 <header>
                     <IntroHero
                         title="Resources"
@@ -197,7 +190,7 @@ class Resources extends Component {
                         </div>
                     </div>
                 </main>
-            </>
+            </PageTemplate>
         );
     }
 }
