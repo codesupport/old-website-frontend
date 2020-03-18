@@ -11,6 +11,7 @@ import ProfileHeader from "../organisms/ProfileHeader";
 import "../../css/pages/profile.css";
 import ErrorTemplate from "../templates/ErrorTemplate";
 import {analytics} from "../../services/FirebaseService";
+import PageTemplate from "../templates/PageTemplate";
 
 class Profile extends Component {
     state = {
@@ -50,7 +51,7 @@ class Profile extends Component {
 
         if (loaded) {
             return (
-                <>
+                <PageTemplate>
                     <ProfileHeader profile={profile}/>
                     <div className="container">
                         <div className="content" id="profile-area">
@@ -63,7 +64,7 @@ class Profile extends Component {
                             </aside>
                         </div>
                     </div>
-                </>
+                </PageTemplate>
             );
         }
 
