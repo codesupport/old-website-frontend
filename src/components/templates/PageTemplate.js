@@ -9,7 +9,7 @@ function PageTemplate({ page, children }) {
     return (
         <>
             <Helmet>
-                <title>CodeSupport | {page}</title>
+                <title>{page} - CodeSupport</title>
             </Helmet>
             <Navigation />
             {children}
