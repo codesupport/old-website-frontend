@@ -59,7 +59,7 @@ class Navigation extends Component {
                         </ul>
                         <ul className="nav-right">
                             <li onClick={this.toggleLoginModal}>
-                                <Link href="#">
+                                <Link to="#">
                                     {!loggedIn ? "Sign Up" : ""}
                                 </Link>
                             </li>
