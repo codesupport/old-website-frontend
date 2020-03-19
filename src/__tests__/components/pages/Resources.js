@@ -1,10 +1,14 @@
 import React from "react";
 import {mount, shallow} from "enzyme";
+import {BrowserRouter} from "react-router-dom";
+import {analytics} from "../../../services/FirebaseService";
 
 import Resources from "../../../components/pages/Resources";
 import ResourcesService from "../../../services/ResourcesService";
 
-describe("Resources", () => {
+jest.mock("../../../services/FirebaseService");
+
+describe("Resources Page", () => {
     let component;
 
     beforeEach(() => component = shallow(<Resources location={{
@@ -15,11 +19,18 @@ describe("Resources", () => {
         it("gets resources from the ResourceService", () => {
             const spy = jest.spyOn(ResourcesService, "getResources");
 
-            component = mount(<Resources location={{
+            component = mount(<BrowserRouter><Resources location={{
                 search: undefined
-            }}/>);
+            }}/></BrowserRouter>);
 
             expect(spy).toHaveBeenCalled();
+        });
+    });
+
+    describe("componentDidMount()", () => {
+        it("calls analytics.logEvent()", () => {
+            expect(analytics.logEvent).toHaveBeenCalled();
+            expect(analytics.logEvent).toHaveBeenCalledWith("resources_page_view");
         });
     });
 
