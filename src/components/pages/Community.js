@@ -51,7 +51,7 @@ class Community extends Component {
                                 Community Showcase
                             </h2>
                             <CardGroup>
-                                {sortArrayBy(showcase_posts, "title").map((post) => (
+                                {sortArrayBy(showcase_posts[0], "title").map((post) => (
                                     <Card
                                         title={post.title}
                                         description={post.description}
