@@ -27,7 +27,7 @@ class ShowcaseService {
                 return [];
             }
         } catch (error) {
-            throw new Error(`There was an error getting all the showcase posts.`);
+            throw new Error("There was an error getting all the showcase posts.");
         }
     }
 }
