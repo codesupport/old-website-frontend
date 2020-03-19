@@ -19,7 +19,7 @@ class Community extends Component {
 
             this.setState({
                 loaded: true,
-                showcase_posts: posts
+                showcase_posts: sortArrayBy(posts, "title")
             });
         } catch (error) {
             this.setState({
@@ -33,7 +33,7 @@ class Community extends Component {
     }
 
     render() {
-        const {error, loaded, showcase_posts } = this.state;
+        const {error, loaded, showcase_posts: showcasePosts } = this.state;
 
         if (error) {
             return <ErrorTemplate message={error.message} />;
@@ -51,7 +51,7 @@ class Community extends Component {
                                 Community Showcase
                             </h2>
                             <CardGroup>
-                                {sortArrayBy(showcase_posts[0], "title").map((post) => (
+                                {showcasePosts.map((post) => (
                                     <Card
                                         title={post.title}
                                         description={post.description}
