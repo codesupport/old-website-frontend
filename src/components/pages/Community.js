@@ -10,7 +10,7 @@ import sortArrayBy from "../../helpers/sortArrayBy";
 class Community extends Component {
     state = {
         loaded: false,
-        showcase_posts: []
+        showcasePosts: []
     };
 
     async getShowcasePosts() {
@@ -19,7 +19,7 @@ class Community extends Component {
 
             this.setState({
                 loaded: true,
-                showcase_posts: sortArrayBy(posts, "title")
+                showcasePosts: sortArrayBy(posts, "title")
             });
         } catch (error) {
             this.setState({
@@ -33,7 +33,7 @@ class Community extends Component {
     }
 
     render() {
-        const {error, loaded, showcase_posts: showcasePosts } = this.state;
+        const {error, loaded, showcasePosts } = this.state;
 
         if (error) {
             return <ErrorTemplate message={error.message} />;
