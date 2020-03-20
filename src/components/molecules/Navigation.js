@@ -32,36 +32,36 @@ class Navigation extends Component {
                     <div className="nav-container">
                         <ul className="nav-left">
                             <li>
-                                <a href="/">
+                                <Link to="/">
                                     <img
                                         className="logo"
                                         alt="CodeSupport Logo"
                                         src={`${config["firebase-bucket-url"]}/logo.png?alt=media`}
                                         draggable="false"
                                     />
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/">
+                                <Link to="/">
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/community">
+                                <Link to="/community">
                                     Community
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/resources">
+                                <Link to="/resources">
                                     Resources
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                         <ul className="nav-right">
                             <li onClick={this.toggleLoginModal}>
-                                <a href="#">
+                                <Link to="#">
                                     {!loggedIn ? "Sign Up" : ""}
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

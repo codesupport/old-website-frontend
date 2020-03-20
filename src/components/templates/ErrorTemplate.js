@@ -13,11 +13,11 @@ function ErrorTemplate({message, code}) {
                 <p>
                     {message}
                 </p>
-                <a href="/">
+                <Link to="/">
                     <button>
                         Back To The Homepage
                     </button>
-                </a>
+                </Link>
             </section>
         </main>
     );
