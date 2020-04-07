@@ -161,32 +161,30 @@ class Resources extends Component {
                 </section>
                 <main id="resources">
                     <div className="container">
-                        <div className="content">
-                            {!resources.length ? status :
-                                <CardGroup>
-                                    {resources.map((resource) =>
-                                        <Card
-                                            key={resource.key}
-                                            title={resource.affiliate_link ? `${resource.name}*` : resource.name}
-                                            description={resource.description}
+                        {!resources.length ? status :
+                            <CardGroup>
+                                {resources.map((resource) =>
+                                    <Card
+                                        key={resource.key}
+                                        title={resource.affiliate_link ? `${resource.name}*` : resource.name}
+                                        description={resource.description}
+                                    >
+                                        <a
+                                            target="_blank"
+                                            href={resource.url}
+                                            rel="noopener noreferrer"
                                         >
-                                            <a
-                                                target="_blank"
-                                                href={resource.url}
-                                                rel="noopener noreferrer"
-                                            >
-                                                <button type="button">
-                                                    Learn More
-                                                </button>
-                                            </a>
-                                        </Card>
-                                    )}
-                                </CardGroup>
-                            }
-                            <p id="affiliate-disclaimer">
-                                <b>Disclaimer:</b> Resources with a <code>*</code> are affiliate links.
-                            </p>
-                        </div>
+                                            <button type="button">
+                                                Learn More
+                                            </button>
+                                        </a>
+                                    </Card>
+                                )}
+                            </CardGroup>
+                        }
+                        <p id="affiliate-disclaimer">
+                            <b>Disclaimer:</b> Resources with a <code>*</code> are affiliate links.
+                        </p>
                     </div>
                 </main>
             </PageTemplate>

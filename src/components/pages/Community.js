@@ -46,7 +46,7 @@ class Community extends Component {
                         title="Community"
                     />
                     <main>
-                        <section id="community-showcase">
+                        <section id="community-showcase" className="container">
                             <h2>
                                 Community Showcase
                             </h2>

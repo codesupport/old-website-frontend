@@ -54,7 +54,7 @@ class Profile extends Component {
                 <PageTemplate>
                     <ProfileHeader profile={profile}/>
                     <div className="container">
-                        <div className="content" id="profile-area">
+                        <div id="profile-area">
                             <main>
                                 <ProfileFeed profile={profile}/>
                             </main>
