@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 
 import {UserProfile} from "../../services/UserProfileService";
-import redirect from "../../helpers/redirect";
 
 import ProfileFeed from "../molecules/ProfileFeed";
 import ShowcaseProjectsFeed from "../molecules/ShowcaseProjectsFeed";
@@ -54,7 +53,7 @@ class Profile extends Component {
                 <PageTemplate>
                     <ProfileHeader profile={profile}/>
                     <div className="container">
-                        <div className="content" id="profile-area">
+                        <div id="profile-area">
                             <main>
                                 <ProfileFeed profile={profile}/>
                             </main>

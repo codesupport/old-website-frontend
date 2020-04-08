@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
-import Navigation from "./components/molecules/Navigation";
 import Index from "./components/pages/Index";
 import Community from "./components/pages/Community";
 import Resources from "./components/pages/Resources";
