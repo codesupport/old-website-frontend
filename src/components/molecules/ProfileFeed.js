@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 
 import Card from "./Card";
-import config from "../../config";
 
 class ProfileFeed extends Component {
     state = {
@@ -9,12 +8,6 @@ class ProfileFeed extends Component {
     };
 
     async getUsersArticles(user) {
-        const api = config["backend-api"];
-
-        // const request = await fetch(`${api}/user/v1/articles/${user}`);
-        // const data = await request.json();
-
-        // temp data until endpoint is real
         const data = [
             {
                 id: 1,
