@@ -70,67 +70,6 @@ body {
     background-color: var(--background);
 }
 
-/*h1, h2 {*/
-/*    font-family: "Raleway", sans-serif;*/
-/*    font-weight: bold;*/
-/*}*/
-
-/*h1 {*/
-/*    font-size: 30px;*/
-/*}*/
-
-/*h2 {*/
-/*    font-size: 25px;*/
-/*}*/
-
-/*button {*/
-/*    padding: 5px;*/
-
-/*    color: var(--text);*/
-
-/*    font-weight: bold;*/
-
-/*    background-color: var(--cs-blue);*/
-
-/*    border: 1px solid var(--border);*/
-/*    border-radius: 5px;*/
-/*}*/
-
-/*button:hover {*/
-/*    cursor: pointer;*/
-/*}*/
-
-/*label {*/
-/*    font-family: "Raleway", sans-serif;*/
-/*    font-size: 12px;*/
-/*    letter-spacing: 0;*/
-/*    font-weight: bold;*/
-/*}*/
-
-/*input {*/
-/*    padding: 5px;*/
-
-/*    background-color: var(--foreground);*/
-
-/*    outline: none;*/
-
-/*    border: 0;*/
-/*}*/
-
-/*select {*/
-/*    padding: 5px;*/
-
-/*    background-color: var(--foreground);*/
-
-/*    -webkit-appearance: none;*/
-/*    -webkit-border-radius: 0;*/
-
-/*    outline: none;*/
-
-/*    border-radius: 0;*/
-/*    border: 0;*/
-/*}*/
-
 #intro {
     height: 300px;
 
@@ -145,6 +84,10 @@ body {
     color: #FFFFFF;
 
     background-color: var(--cs-blue);
+}
+
+#intro h1 {
+    color: inherit;
 }
 
 .container {
