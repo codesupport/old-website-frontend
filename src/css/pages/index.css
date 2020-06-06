@@ -1,26 +1,26 @@
-#get-started {
-    margin-top: 25px;
+/*#get-started {*/
+/*    margin-top: 25px;*/
 
-    width: 150px;
-    height: 25px;
+/*    width: 150px;*/
+/*    height: 25px;*/
 
-    color: #242424;
+/*    color: #242424;*/
 
-    font-weight: bold;
-    font-size: 12px;
+/*    font-weight: bold;*/
+/*    font-size: 12px;*/
 
-    background-color: #FFFFFF;
+/*    background-color: #FFFFFF;*/
 
-    border: 0;
+/*    border: 0;*/
 
-    transition: .2s;
-}
+/*    transition: .2s;*/
+/*}*/
 
-#get-started:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-}
+/*#get-started:hover {*/
+/*    cursor: pointer;*/
+/*    transform: scale(1.1);*/
+/*}*/
 
-#articles-header {
-    text-align: center;
-}
+/*#articles-header {*/
+/*    text-align: center;*/
+/*}*/

@@ -1,6 +1,35 @@
 import React from "react";
 
 import "../../css/pages/index.css";
+import Card from "../molecules/Card";
+import CardGroup from "../organisms/CardGroup";
+
+const openSourceProjects = [
+    {
+        title: "Discord Bot",
+        language: "TypeScript",
+        description: "The community Discord bot powered by Discord.js.",
+        repository: "https://github.com/codesupport/discord-bot"
+    },
+    {
+        title: "Website Frontend",
+        language: "JavaScript",
+        description: "The frontend of the CodeSupport website written using the React user interface library.",
+        repository: "https://github.com/codesupport/website-frontend"
+    },
+    {
+        title: "Website Backend",
+        language: "Java",
+        description: "CodeSupport's website backend API service which is powered by Spring Boot.",
+        repository: "https://github.com/codesupport/website-backend"
+    },
+    {
+        title: "Resources API",
+        language: "JSON",
+        description: "A simple repository containing various resources that the community recommends.",
+        repository: "https://github.com/codesupport/resources-api"
+    }
+]
 
 function Index() {
     return (
@@ -14,28 +43,36 @@ function Index() {
                         <p>
                             CodeSupport is a free online learning platform.
                         </p>
-
-                        <button id="get-started" onClick={() => {
-                            const articles = document.querySelector("#articles");
-                            articles.scrollTo({
-                                behavior: "smooth"
-                            });
-                        }}>
-                            Get Started
-                        </button>
                     </div>
                 </div>
             </section>
-            <section id="articles" className="container">
+            <section id="open-source" className="container">
                 <div className="content">
-                    <div id="articles-header">
-                        <h2>
-                            Articles
-                        </h2>
-                        <p>
-                            Content Written By CodeSupport Members
-                        </p>
-                    </div>
+                    <h2 className="uk-text-center">
+                        We Love Open Source
+                    </h2>
+                    <p className="uk-text-center">
+                        At CodeSupport, we believe in building great projects together. Take a look at our open source projects below and start contributing!
+                    </p>
+                    <CardGroup size={2}>
+                        {openSourceProjects.map((project) => (
+                            <Card
+                                title={project.title}
+                                tag={project.language}
+                                tagClass={`lang-${project.language.toLowerCase()}`}
+                                description={project.description}
+                            >
+                                <a
+                                    className="uk-button uk-button-text uk-margin-right"
+                                    target="_blank"
+                                    href={project.repository}
+                                    rel="noopener noreferrer"
+                                >
+                                    GitHub Repository
+                                </a>
+                            </Card>
+                        ))}
+                    </CardGroup>
                 </div>
             </section>
         </>

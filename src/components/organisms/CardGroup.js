@@ -2,9 +2,9 @@ import React from "react";
 
 import "../../css/organisms/cardgroup.css";
 
-function CardGroup({children}) {
+function CardGroup({size, children}) {
     return (
-        <div className="card-group">
+        <div className={`card-group${size ? `-${size}` : ""}`}>
             {children}
         </div>
     );
