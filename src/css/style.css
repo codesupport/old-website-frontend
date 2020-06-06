@@ -59,6 +59,11 @@ body {
     color: var(--text);
 }
 
+.uk-navbar-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
 .nav-logo {
     display: flex;
     justify-content: center;
