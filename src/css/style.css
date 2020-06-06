@@ -59,6 +59,17 @@ body {
     color: var(--text);
 }
 
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-logo img {
+    height: 50px;
+    padding: 20px;
+}
+
 #intro {
     height: 300px;
 

@@ -41,8 +41,14 @@ function Index() {
                             Welcome to CodeSupport
                         </h1>
                         <p>
-                            CodeSupport is a free online learning platform.
+                            CodeSupport is a community dedicated to giving guidance about programming, as well as creating conversation with one another.
                         </p>
+                        <p>
+                            <strong>No matter your skill level, you are welcome in this community.</strong>
+                        </p>
+                        <a href="https://codesupport.dev/discord" className="uk-button uk-button-secondary">
+                            Join The Community
+                        </a>
                     </div>
                 </div>
             </section>
