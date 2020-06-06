@@ -35,14 +35,11 @@ class Resources extends Component {
             for (const category of categories) {
                 const data = await ResourcesService.getResources(category);
 
-                data.forEach((resource, i) => {
-                    data[resource] = {
-                        ...resource,
-                        key: `${category}-${i}`
-                    };
-                });
-
-                resources = resources.concat(data);
+                resources = resources.concat(data.map((resource, i) => ({
+                    ...resource,
+                    category,
+                    key: `${category}-${i}`
+                })));
             }
 
             resources = sortArrayBy(resources, "name");
@@ -160,17 +157,18 @@ class Resources extends Component {
                                     {resources.map((resource) =>
                                         <Card
                                             key={resource.key}
+                                            tag={resource.category}
+                                            tagClass={`lang-${resource.category.toLowerCase()}`}
                                             title={resource.affiliate_link ? `${resource.name}*` : resource.name}
                                             description={resource.description}
                                         >
                                             <a
+                                                className="uk-button uk-button-text uk-margin-right"
                                                 target="_blank"
                                                 href={resource.url}
                                                 rel="noopener noreferrer"
                                             >
-                                                <button type="button">
-                                                    Learn More
-                                                </button>
+                                                Learn More
                                             </a>
                                         </Card>
                                     )}

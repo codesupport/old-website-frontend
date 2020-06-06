@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Raleway:800&display=swap");
+/*@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");*/
+/*@import url("https://fonts.googleapis.com/css?family=Raleway:800&display=swap");*/
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { box-sizing: border-box; }
 
 :root {
     --cs-blue: #1457B3;
@@ -12,85 +12,124 @@
     --text: #242424;
     --error: #DC143C;
     --dark-mode: true;
+
+    --lang-typescript: #396272;
+    --lang-json: #3C3C3D;
+    --lang-javascript: #EDDF7C;
+    --lang-java: #A57438;
+    --lang-python: #3A72A2;
+    --lang-html: #E04D31;
+    --lang-css: #563D79;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-    :root {
-        --background: #11131E;
-        --foreground: #1d1f30;
-        --border: #0C0C0C;
-        --text: #E8E8E9;
-    }
+.uk-label {
+    background-color: #1E56AF;
 }
+
+.lang-typescript {
+    background-color: var(--lang-typescript);
+}
+
+.lang-json {
+    background-color: var(--lang-json);
+}
+
+.lang-javascript {
+    background-color: var(--lang-javascript);
+}
+
+.lang-java {
+    background-color: var(--lang-java);
+}
+
+.lang-python {
+    background-color: var(--lang-python);
+}
+
+.lang-html {
+    background-color: var(--lang-html);
+}
+
+.lang-css {
+    background-color: var(--lang-css);
+}
+
+
+/*!*@media screen and (prefers-color-scheme: dark) {*!*/
+/*!*    :root {*!*/
+/*!*        --background: #11131E;*!*/
+/*!*        --foreground: #1d1f30;*!*/
+/*!*        --border: #0C0C0C;*!*/
+/*!*        --text: #E8E8E9;*!*/
+/*!*    }*!*/
+/*!*}*!*/
 
 body {
     color: var(--text);
 
-    font-family: "Open Sans", sans-serif;
-
     background-color: var(--background);
 }
 
-h1, h2 {
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
-}
+/*h1, h2 {*/
+/*    font-family: "Raleway", sans-serif;*/
+/*    font-weight: bold;*/
+/*}*/
 
-h1 {
-    font-size: 30px;
-}
+/*h1 {*/
+/*    font-size: 30px;*/
+/*}*/
 
-h2 {
-    font-size: 25px;
-}
+/*h2 {*/
+/*    font-size: 25px;*/
+/*}*/
 
-button {
-    padding: 5px;
+/*button {*/
+/*    padding: 5px;*/
 
-    color: var(--text);
+/*    color: var(--text);*/
 
-    font-weight: bold;
+/*    font-weight: bold;*/
 
-    background-color: var(--cs-blue);
+/*    background-color: var(--cs-blue);*/
 
-    border: 1px solid var(--border);
-    border-radius: 5px;
-}
+/*    border: 1px solid var(--border);*/
+/*    border-radius: 5px;*/
+/*}*/
 
-button:hover {
-    cursor: pointer;
-}
+/*button:hover {*/
+/*    cursor: pointer;*/
+/*}*/
 
-label {
-    font-family: "Raleway", sans-serif;
-    font-size: 12px;
-    letter-spacing: 0;
-    font-weight: bold;
-}
+/*label {*/
+/*    font-family: "Raleway", sans-serif;*/
+/*    font-size: 12px;*/
+/*    letter-spacing: 0;*/
+/*    font-weight: bold;*/
+/*}*/
 
-input {
-    padding: 5px;
+/*input {*/
+/*    padding: 5px;*/
 
-    background-color: var(--foreground);
+/*    background-color: var(--foreground);*/
 
-    outline: none;
+/*    outline: none;*/
 
-    border: 0;
-}
+/*    border: 0;*/
+/*}*/
 
-select {
-    padding: 5px;
+/*select {*/
+/*    padding: 5px;*/
 
-    background-color: var(--foreground);
+/*    background-color: var(--foreground);*/
 
-    -webkit-appearance: none;
-    -webkit-border-radius: 0;
+/*    -webkit-appearance: none;*/
+/*    -webkit-border-radius: 0;*/
 
-    outline: none;
+/*    outline: none;*/
 
-    border-radius: 0;
-    border: 0;
-}
+/*    border-radius: 0;*/
+/*    border: 0;*/
+/*}*/
 
 #intro {
     height: 300px;
