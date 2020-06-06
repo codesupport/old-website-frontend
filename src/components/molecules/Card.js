@@ -7,7 +7,7 @@ function Card({tag, tagClass, title, description, children}) {
              <span className={`uk-card-badge uk-label ${tagClass}`}>{tag}</span>
             }
             {title &&
-                <h2 className="uk-card-title">
+                <h2 className="uk-card-title uk-margin-xlarge-right">
                     {title}
                 </h2>}
             {description &&
