@@ -1,0 +1,27 @@
+{
+  "hosting": {
+    "public": "build",
+    "redirects": [
+    	{
+    		"source": "/open-source",
+    		"destination": "/open-source.html",
+    		"type": 301
+    	},
+    	{
+    		"source": "/discord",
+    		"destination": "https://discord.gg/XQ9C3sY",
+    		"type": 301
+    	},
+    	{
+    		"source": "/eslint",
+    		"destination": "https://github.com/codesupport/eslint-config-codesupport",
+    		"type": 301
+    	}
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
