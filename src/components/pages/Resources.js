@@ -130,11 +130,11 @@ class Resources extends Component {
                         <div className="content">
                             <label>
                                 Search for a resource
-                                <input id="search-resources" onChange={this.searchResources} type="text" placeholder="Type something..." />
+                                <input id="search-resources" className="uk-input" onChange={this.searchResources} type="text" placeholder="Type something..." />
                             </label>
                             <label>
                                 Filter by category
-                                <select id="filter-category" onChange={this.filterResources} value={this.state.filterResources}>
+                                <select id="filter-category" className="uk-select" onChange={this.filterResources} value={this.state.filterResources}>
                                     <option value="Show All" key="all">Show All</option>
                                     {config["resource-categories"].map((category) => (
                                         <option value={category} key={category}>{category}</option>
@@ -143,7 +143,7 @@ class Resources extends Component {
                             </label>
                             <label>
                                 Filter by price
-                                <select id="filter-price" onChange={this.filterPrice} value={this.state.filterPrice}>
+                                <select id="filter-price" className="uk-select" onChange={this.filterPrice} value={this.state.filterPrice}>
                                     <option value="Show All" key="all">Show All</option>
                                     <option value="true" key="true">Free</option>
                                     <option value="false" key="false">Paid</option>
