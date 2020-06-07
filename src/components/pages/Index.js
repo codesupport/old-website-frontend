@@ -32,7 +32,7 @@ const openSourceProjects = [
         description: "A simple repository containing various resources that the community recommends.",
         repository: "https://github.com/codesupport/resources-api"
     }
-]
+];
 
 function Index() {
     return (

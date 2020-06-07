@@ -14,7 +14,7 @@ describe("ShowcaseProjectsFeed", () => {
                 showcase_projects: []
             });
 
-            expect(component.children().find(".card")).toHaveLength(0);
+            expect(component.children().find(".uk-card")).toHaveLength(0);
             expect(component.children().find("p")).toHaveLength(1);
             expect(component.children().find("p").text()).toEqual("ExampleUser has no showcased projects.");
         });
@@ -31,7 +31,7 @@ describe("ShowcaseProjectsFeed", () => {
                 ]
             });
 
-            const card = component.children().find(".card");
+            const card = component.children().find(".uk-card");
 
             expect(card).toHaveLength(1);
             expect(card.children().find("h2").text()).toEqual("Example Project");

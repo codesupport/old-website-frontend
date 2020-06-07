@@ -13,7 +13,7 @@ describe("ProfileFeed", () => {
                 articles: []
             });
 
-            expect(component.children().find(".card")).toHaveLength(0);
+            expect(component.children().find(".uk-card")).toHaveLength(0);
             expect(component.children().find("p")).toHaveLength(1);
             expect(component.children().find("p").text()).toEqual("There is no content to display in ExampleUser's feed.");
         });
@@ -29,7 +29,7 @@ describe("ProfileFeed", () => {
                 ]
             });
 
-            const card = component.children().find(".card");
+            const card = component.children().find(".uk-card");
 
             expect(card).toHaveLength(1);
             expect(card.children().find("h2").text()).toEqual("Example Article");

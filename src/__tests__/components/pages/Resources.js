@@ -59,6 +59,7 @@ describe("Resources Page", () => {
             component.setState({
                 resources: [{
                     name: "Bad CSS Tutorials",
+                    category: "CSS",
                     key: "css-0"
                 }]
             });
