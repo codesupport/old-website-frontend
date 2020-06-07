@@ -75,7 +75,7 @@ body {
     padding: 20px;
 }
 
-#intro {
+.intro {
     height: 300px;
 
     margin-bottom: 50px;
@@ -91,11 +91,18 @@ body {
     background-color: var(--cs-blue);
 }
 
-#intro h1 {
+.intro h1 {
     color: inherit;
 }
 
 .container {
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+}
+
+.content {
     max-width: 1000px;
-    margin: 0 auto;
+    width: 1000px;
 }
