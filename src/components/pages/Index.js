@@ -36,55 +36,57 @@ const openSourceProjects = [
 
 function Index() {
     return (
-        <>
-            <section id="intro">
-                <div className="container">
-                    <div className="content">
-                        <h1>
-                            Welcome to CodeSupport
-                        </h1>
-                        <p>
-                            CodeSupport is a community dedicated to giving guidance about programming, as well as creating conversation with one another.
-                        </p>
-                        <p>
+        <PageTemplate page="index">
+            <header>
+                <IntroHero
+                    title="Welcome to CodeSupport"
+                    description={
+                        <>
+                            <p>
+                                CodeSupport is a community dedicated to giving guidance about programming, as well as creating conversation with one another.
+                            </p>
+                            <p>
                             <strong>No matter your skill level, you are welcome in this community.</strong>
-                        </p>
-                        <a href="https://codesupport.dev/discord" className="uk-button uk-button-secondary">
+                            </p>
+                            <a href="https://codesupport.dev/discord" className="uk-button uk-button-secondary">
                             Join The Community
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <section id="open-source" className="container">
-                <div className="content">
-                    <h2 className="uk-text-center">
-                        We Love Open Source
-                    </h2>
-                    <p className="uk-text-center">
-                        At CodeSupport, we believe in building great projects together. Take a look at our open source projects below and start contributing!
-                    </p>
-                    <CardGroup size={2}>
-                        {openSourceProjects.map((project) => (
-                            <Card
-                                title={project.title}
-                                tag={project.language}
-                                tagClass={`lang-${project.language.toLowerCase()}`}
-                                description={project.description}
-                            >
-                                <a
-                                    className="uk-button uk-button-text uk-margin-right"
-                                    target="_blank"
-                                    href={project.repository}
-                                    rel="noopener noreferrer"
+                            </a>
+                        </>
+                    }
+                />
+            </header>
+            <main>
+                <section id="open-source" className="container">
+                    <div className="content">
+                        <h2 className="uk-text-center">
+                            We Love Open Source
+                        </h2>
+                        <p className="uk-text-center">
+                            At CodeSupport, we believe in building great projects together. Take a look at our open source projects below and start contributing!
+                        </p>
+                        <CardGroup size={2}>
+                            {openSourceProjects.map((project) => (
+                                <Card
+                                    title={project.title}
+                                    tag={project.language}
+                                    tagClass={`lang-${project.language.toLowerCase()}`}
+                                    description={project.description}
                                 >
-                                    GitHub Repository
-                                </a>
-                            </Card>
-                        ))}
-                    </CardGroup>
-                </div>
-            </section>
-        </>
+                                    <a
+                                        className="uk-button uk-button-text uk-margin-right"
+                                        target="_blank"
+                                        href={project.repository}
+                                        rel="noopener noreferrer"
+                                    >
+                                        GitHub Repository
+                                    </a>
+                                </Card>
+                            ))}
+                        </CardGroup>
+                    </div>
+                </section>
+            </main>
+        </PageTemplate>
     );
 }
 

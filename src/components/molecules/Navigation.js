@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import config from "../../config";
+import logo from "../../img/logo.png";
 
 function Navigation() {
     return (
@@ -13,7 +13,7 @@ function Navigation() {
                         <img
                             className="uk-navbar-item uk-logo"
                             alt="CodeSupport Logo"
-                            src={`${config["firebase-bucket-url"]}/logo.png?alt=media`}
+                            src={logo}
                             draggable="false"
                         />
                     </Link>
