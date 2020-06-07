@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 
-import config from "../../config";
 import Card from "./Card";
 import Tag from "../atoms/Tag";
 
@@ -10,11 +9,6 @@ class ShowcaseProjectsFeed extends Component {
     };
 
     async getShowcaseProjects(user) {
-        const api = config["backend-api"];
-
-        // const request = await fetch(`${api}/user/v1/showcases/${user}`);
-        // const data = await request.json();
-
         // temp data until endpoint is real
         const data = [
             {

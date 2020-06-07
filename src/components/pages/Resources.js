@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+import {analytics} from "../../services/FirebaseService";
 import ResourcesService from "../../services/ResourcesService";
 import config from "../../config";
 
@@ -9,6 +10,9 @@ import ErrorTemplate from "../templates/ErrorTemplate";
 
 import "../../css/pages/resources.css";
 import sortArrayBy from "../../helpers/sortArrayBy";
+import IntroHero from "../molecules/IntroHero";
+import getQueries from "../../helpers/getQueries";
+import PageTemplate from "../templates/PageTemplate";
 
 const ERROR_MESSAGE = "There was a problem loading the resources.";
 
@@ -23,6 +27,14 @@ class Resources extends Component {
 
     async getResources() {
         try {
+            const {category} = getQueries(this.props.location.search);
+
+            if (category) {
+                await this.setState({
+                    filterResources: category
+                });
+            }
+
             let categories = [];
             let resources = [];
 
@@ -98,6 +110,7 @@ class Resources extends Component {
     };
 
     componentDidMount() {
+        analytics.logEvent("resources_page_view");
         this.getResources();
     }
 
@@ -109,18 +122,12 @@ class Resources extends Component {
         }
 
         return (
-            <>
-                <header id="intro">
-                    <div className="container">
-                        <div className="content">
-                            <h1>
-                                Resources
-                            </h1>
-                            <p>
-                                A collection of programming resources curated by the CodeSupport community.
-                            </p>
-                        </div>
-                    </div>
+            <PageTemplate page="Resources">
+                <header>
+                    <IntroHero
+                        title="Resources"
+                        description="A collection of programming resources curated by the CodeSupport community."
+                    />
                 </header>
                 <section id="filter-resources" role="search">
                     <div className="container">
@@ -180,7 +187,7 @@ class Resources extends Component {
                         </div>
                     </div>
                 </main>
-            </>
+            </PageTemplate>
         );
     }
 }

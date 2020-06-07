@@ -1,0 +1,52 @@
+nav {
+    height: 75px;
+
+    display: flex;
+
+    justify-content: center;
+
+    background-color: var(--foreground);
+
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .15);
+}
+
+.nav-container {
+    width: 1000px;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    padding-left: 12.5px;
+    padding-right: 12.5px;
+
+    display: inline;
+
+    line-height: 75px;
+}
+
+nav ul li a {
+    color: var(--text);
+
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid var(--cs-blue);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+
+    vertical-align: middle;
+}
+
+.nav-right {
+    text-align: right;
+}

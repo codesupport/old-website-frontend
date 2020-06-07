@@ -54,7 +54,7 @@ class LabelWithInput extends Component {
                         this.validate(event, pattern);
                     }}
                 />
-                {errors[name] ? <span className="input-error">{errorMessage}</span> : ""}
+                {errors[name] ? <span className="input-error">{errorMessage || "This input is not valid."}</span> : ""}
             </label>
         );
     }

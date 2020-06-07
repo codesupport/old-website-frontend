@@ -1,0 +1,38 @@
+.intro {
+    height: 300px;
+
+    margin-bottom: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    background-color: var(--cs-blue);
+}
+
+.intro button {
+    margin-top: 25px;
+
+    width: 150px;
+    height: 25px;
+
+    color: #242424;
+
+    font-weight: bold;
+    font-size: 12px;
+
+    background-color: #FFFFFF;
+
+    border: 0;
+
+    transition: .2s;
+}
+
+.intro button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

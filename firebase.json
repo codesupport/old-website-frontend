@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "build",
+<<<<<<< HEAD
     "redirects": [
     	{
     		"source": "/open-source",
@@ -16,7 +17,11 @@
     		"source": "/eslint",
     		"destination": "https://github.com/codesupport/eslint-config-codesupport",
     		"type": 301
-    	}
+    	},
+        {
+            "source": "**",
+            "destination": "/index.html"
+        }
     ],
     "ignore": [
       "firebase.json",
