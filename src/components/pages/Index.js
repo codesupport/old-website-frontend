@@ -42,8 +42,8 @@ function Index() {
                     title="Welcome to CodeSupport"
                     description="CodeSupport is a community dedicated to giving guidance about programming, as well as creating conversation with one another. No matter your skill level, you are welcome in this community."
                     button={{
-                        href: "_blank",
-                        target: "https://codesupport.dev/discord",
+                        target: "_blank",
+                        href: "https://codesupport.dev/discord",
                         text: "Join The Community"
                     }}
                 />
