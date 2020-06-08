@@ -4,3 +4,4 @@ coverage/
 .firebase/
 firebase-debug.log
 build/
+.DS_Store
