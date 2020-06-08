@@ -7,6 +7,9 @@ import Community from "./components/pages/Community";
 import Resources from "./components/pages/Resources";
 import Profile from "./components/pages/Profile";
 
+import "../node_modules/uikit/dist/css/uikit.min.css";
+import "./css/style.css";
+
 function Router() {
     return (
         <BrowserRouter>

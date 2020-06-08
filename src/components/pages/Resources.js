@@ -47,14 +47,11 @@ class Resources extends Component {
             for (const category of categories) {
                 const data = await ResourcesService.getResources(category);
 
-                data.forEach((resource, i) => {
-                    data[resource] = {
-                        ...resource,
-                        key: `${category}-${i}`
-                    };
-                });
-
-                resources = resources.concat(data);
+                resources = resources.concat(data.map((resource, i) => ({
+                    ...resource,
+                    category,
+                    key: `${category}-${i}`
+                })));
             }
 
             resources = sortArrayBy(resources, "name");
@@ -137,11 +134,11 @@ class Resources extends Component {
                         <div className="content">
                             <label>
                                 Search for a resource
-                                <input id="search-resources" onChange={this.searchResources} type="text" placeholder="Type something..." />
+                                <input id="search-resources" className="uk-input" onChange={this.searchResources} type="text" placeholder="Type something..." />
                             </label>
                             <label>
                                 Filter by category
-                                <select id="filter-category" onChange={this.filterResources} value={this.state.filterResources}>
+                                <select id="filter-category" className="uk-select" onChange={this.filterResources} value={this.state.filterResources}>
                                     <option value="Show All" key="all">Show All</option>
                                     {config["resource-categories"].map((category) => (
                                         <option value={category} key={category}>{category}</option>
@@ -150,7 +147,7 @@ class Resources extends Component {
                             </label>
                             <label>
                                 Filter by price
-                                <select id="filter-price" onChange={this.filterPrice} value={this.state.filterPrice}>
+                                <select id="filter-price" className="uk-select" onChange={this.filterPrice} value={this.state.filterPrice}>
                                     <option value="Show All" key="all">Show All</option>
                                     <option value="true" key="true">Free</option>
                                     <option value="false" key="false">Paid</option>
@@ -161,30 +158,33 @@ class Resources extends Component {
                 </section>
                 <main id="resources">
                     <div className="container">
-                        {!resources.length ? status :
-                            <CardGroup>
-                                {resources.map((resource) =>
-                                    <Card
-                                        key={resource.key}
-                                        title={resource.affiliate_link ? `${resource.name}*` : resource.name}
-                                        description={resource.description}
-                                    >
-                                        <a
-                                            target="_blank"
-                                            href={resource.url}
-                                            rel="noopener noreferrer"
+                        <div className="content">
+                            {!resources.length ? status :
+                                <CardGroup>
+                                    {resources.map((resource) =>
+                                        <Card
+                                            key={resource.key}
+                                            tag={resource.category}
+                                            tagClass={`lang-${resource.category.toLowerCase()}`}
+                                            title={resource.affiliate_link ? `${resource.name}*` : resource.name}
+                                            description={resource.description}
                                         >
-                                            <button type="button">
+                                            <a
+                                                className="uk-button uk-button-text uk-margin-right"
+                                                target="_blank"
+                                                href={resource.url}
+                                                rel="noopener noreferrer"
+                                            >
                                                 Learn More
-                                            </button>
-                                        </a>
-                                    </Card>
-                                )}
-                            </CardGroup>
-                        }
-                        <p id="affiliate-disclaimer">
-                            <b>Disclaimer:</b> Resources with a <code>*</code> are affiliate links.
-                        </p>
+                                            </a>
+                                        </Card>
+                                    )}
+                                </CardGroup>
+                            }
+                            <p id="affiliate-disclaimer">
+                                <b>Disclaimer:</b> Resources with a <code>*</code> are affiliate links.
+                            </p>
+                        </div>
                     </div>
                 </main>
             </PageTemplate>

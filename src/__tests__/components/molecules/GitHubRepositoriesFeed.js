@@ -26,7 +26,7 @@ describe("GitHubRepositoriesFeed", () => {
                 }
             }} />);
 
-            expect(component.children().find(".card")).toHaveLength(0);
+            expect(component.children().find(".uk-card")).toHaveLength(0);
             expect(component.children().find("p")).toHaveLength(1);
             expect(component.children().find("p").text()).toEqual("ExampleUser has not connected their GitHub account.");
         });
@@ -36,7 +36,7 @@ describe("GitHubRepositoriesFeed", () => {
                 github_repositories: []
             });
 
-            expect(component.children().find(".card")).toHaveLength(0);
+            expect(component.children().find(".uk-card")).toHaveLength(0);
             expect(component.children().find("p")).toHaveLength(1);
             expect(component.children().find("p").text()).toEqual("ExampleUser has not connected their GitHub account.");
         });
@@ -60,7 +60,7 @@ describe("GitHubRepositoriesFeed", () => {
 
             expect(component.children().find("a").prop("href")).toEqual("https://github.com/ExampleUser/ExampleRepository");
 
-            const card = component.children().find(".card");
+            const card = component.children().find(".uk-card");
 
             expect(card).toHaveLength(1);
             expect(card.children().find("h2").text()).toEqual("Example Repository");

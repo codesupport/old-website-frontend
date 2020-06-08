@@ -15,10 +15,8 @@ function IntroHero({title, description, button}) {
                     </p>
 
                     {button &&
-                        <a href={button.href} target={button.target}>
-                            <button>
-                                {button.text}
-                            </button>
+                        <a href={button.href} target={button.target} className="uk-button uk-button-secondary">
+                            {button.text}
                         </a>
                     }
                 </div>

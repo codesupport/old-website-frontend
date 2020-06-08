@@ -1,15 +1,17 @@
 import React from "react";
-import "../../css/molecules/card.css";
 
-function Card({title, description, children}) {
+function Card({tag, tagClass, title, description, children}) {
     return (
-        <article className="card">
+        <article className="uk-card uk-card-default uk-card-small uk-card-body">
+            {tag &&
+             <span className={`uk-card-badge uk-label ${tagClass}`}>{tag}</span>
+            }
             {title &&
-                <h2 className="card-title">
+                <h2 className="uk-card-title uk-margin-xlarge-right">
                     {title}
                 </h2>}
             {description &&
-                <p className="card-description">
+                <p>
                     {description}
                 </p>
             }
