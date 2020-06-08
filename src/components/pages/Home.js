@@ -34,9 +34,9 @@ const openSourceProjects = [
     }
 ];
 
-function Index() {
+function Home() {
     return (
-        <PageTemplate page="index">
+        <PageTemplate page="Home">
             <header>
                 <IntroHero
                     title="Welcome to CodeSupport"
@@ -84,4 +84,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default Home;
