@@ -6,7 +6,7 @@ import logo from "../../img/logo.png";
 
 function Navigation() {
     return (
-        <nav className="uk-navbar-container" uk-navbar>
+        <nav className="uk-navbar-container" data-uk-navbar>
             <div className="uk-navbar-left">
                 <ul className="uk-navbar-nav nav-logo">
                     <Link to="/">

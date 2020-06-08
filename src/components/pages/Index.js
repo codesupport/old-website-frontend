@@ -40,19 +40,12 @@ function Index() {
             <header>
                 <IntroHero
                     title="Welcome to CodeSupport"
-                    description={
-                        <>
-                            <p>
-                                CodeSupport is a community dedicated to giving guidance about programming, as well as creating conversation with one another.
-                            </p>
-                            <p>
-                            <strong>No matter your skill level, you are welcome in this community.</strong>
-                            </p>
-                            <a href="https://codesupport.dev/discord" className="uk-button uk-button-secondary">
-                            Join The Community
-                            </a>
-                        </>
-                    }
+                    description="CodeSupport is a community dedicated to giving guidance about programming, as well as creating conversation with one another. No matter your skill level, you are welcome in this community."
+                    button={{
+                        href: "_blank",
+                        target: "https://codesupport.dev/discord",
+                        text: "Join The Community"
+                    }}
                 />
             </header>
             <main>
@@ -67,6 +60,7 @@ function Index() {
                         <CardGroup size={2}>
                             {openSourceProjects.map((project) => (
                                 <Card
+                                    key={project.title}
                                     title={project.title}
                                     tag={project.language}
                                     tagClass={`lang-${project.language.toLowerCase()}`}
