@@ -3,7 +3,6 @@ import React from "react";
 import PageTemplate from "../templates/PageTemplate";
 import IntroHero from "../molecules/IntroHero";
 
-import "../../css/pages/index.css";
 import Card from "../molecules/Card";
 import CardGroup from "../organisms/CardGroup";
 
