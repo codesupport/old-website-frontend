@@ -3,7 +3,6 @@ import React from "react";
 import PageTemplate from "../templates/PageTemplate";
 import IntroHero from "../molecules/IntroHero";
 
-import "../../css/pages/index.css";
 import Card from "../molecules/Card";
 import CardGroup from "../organisms/CardGroup";
 
@@ -34,9 +33,9 @@ const openSourceProjects = [
     }
 ];
 
-function Index() {
+function Home() {
     return (
-        <PageTemplate page="index">
+        <PageTemplate page="Home">
             <header>
                 <IntroHero
                     title="Welcome to CodeSupport"
@@ -84,4 +83,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default Home;
