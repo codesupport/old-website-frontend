@@ -96,13 +96,12 @@ body {
 }
 
 .container {
-    width: 100vw;
-
-    display: flex;
-    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.content {
-    max-width: 1000px;
-    width: 1000px;
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
 }
