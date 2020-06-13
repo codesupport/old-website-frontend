@@ -104,4 +104,9 @@ body {
     .container {
         padding: 15px;
     }
+
+    .uk-margin-xlarge-right {
+        /* Have to apply !important to overwrite UIkit */
+        margin-right: 100px !important;
+    }
 }
