@@ -14,9 +14,15 @@
     grid-row-gap: 25px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .card-group {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .card-group {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
