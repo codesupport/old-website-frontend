@@ -130,8 +130,8 @@ class Resources extends Component {
                     />
                 </header>
                 <section id="filter-resources" role="search">
-                    <div className="container">
-                        <label>
+                    <div className="container resource-filters">
+                        <label className="resource-filter-search">
                             Search for a resource
                             <input id="search-resources" className="uk-input" onChange={this.searchResources} type="text" placeholder="Type something..." />
                         </label>
