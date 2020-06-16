@@ -23,9 +23,9 @@ function Footer() {
         <footer className="container">
             <div className="footer-social">
                 <ul className="footer-social-icons">
-                    {socialLinks.map(({ icon, link }) => (
-                        <li>
-                            <a target="_blank" href={link}>
+                    {socialLinks.map(({ icon, link }, i) => (
+                        <li key={i}>
+                            <a target="_blank" href={link} rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={icon} />
                             </a>
                         </li>
