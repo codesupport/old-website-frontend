@@ -140,7 +140,7 @@ class Resources extends Component {
                             <select id="filter-category" className="uk-select" onChange={this.filterResources} value={this.state.filterResources}>
                                 <option value="Show All" key="all">Show All</option>
                                 {config["resource-categories"].map((category) => (
-                                    <option value={category} key={category}>{category}</option>
+                                    <option value={category.toLowerCase()} key={category}>{category}</option>
                                 ))}
                             </select>
                         </label>
