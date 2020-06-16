@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import logo from "../../img/logo.png";
 
 function Navigation() {
