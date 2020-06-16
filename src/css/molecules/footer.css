@@ -1,0 +1,35 @@
+.footer-social {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+}
+
+.footer-social-icons {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.footer-social-icons li {
+    display: inline;
+    font-size: 1.5rem;
+}
+
+.footer-social-icons li a {
+    color: var(--text);
+    transition: 0.1s;
+}
+
+.footer-social-icons li a:hover {
+    color: var(--cs-blue);
+}
+
+.footer-copyright {
+    margin: 0;
+    padding-bottom: 25px;
+    text-align: center;
+    font-size: 0.5rem;
+}

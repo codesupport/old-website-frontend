@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import logo from "../../img/logo.png";
 
 function Navigation() {
@@ -26,25 +24,6 @@ function Navigation() {
                         <Link to="/resources">
                             Resources
                         </Link>
-                    </li>
-                </ul>
-            </div>
-            <div className="nav-social uk-navbar-right">
-                <ul className="uk-navbar-nav">
-                    <li>
-                        <a href="https://codesupport.dev/discord">
-                            <FontAwesomeIcon icon={faDiscord} />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/codesupportdev">
-                            <FontAwesomeIcon icon={faTwitter} />
-                        </a>
-                    </li>
-                    <li className="uk-margin-right">
-                        <a href="https://github.com/codesupport">
-                            <FontAwesomeIcon icon={faGithub} />
-                        </a>
                     </li>
                 </ul>
             </div>

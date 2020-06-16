@@ -130,61 +130,57 @@ class Resources extends Component {
                     />
                 </header>
                 <section id="filter-resources" role="search">
-                    <div className="container">
-                        <div className="content">
-                            <label>
-                                Search for a resource
-                                <input id="search-resources" className="uk-input" onChange={this.searchResources} type="text" placeholder="Type something..." />
-                            </label>
-                            <label>
-                                Filter by category
-                                <select id="filter-category" className="uk-select" onChange={this.filterResources} value={this.state.filterResources}>
-                                    <option value="Show All" key="all">Show All</option>
-                                    {config["resource-categories"].map((category) => (
-                                        <option value={category} key={category}>{category}</option>
-                                    ))}
-                                </select>
-                            </label>
-                            <label>
-                                Filter by price
-                                <select id="filter-price" className="uk-select" onChange={this.filterPrice} value={this.state.filterPrice}>
-                                    <option value="Show All" key="all">Show All</option>
-                                    <option value="true" key="true">Free</option>
-                                    <option value="false" key="false">Paid</option>
-                                </select>
-                            </label>
-                        </div>
+                    <div className="container resource-filters">
+                        <label className="resource-filter-search">
+                            Search for a resource
+                            <input id="search-resources" className="uk-input" onChange={this.searchResources} type="text" placeholder="Type something..." />
+                        </label>
+                        <label>
+                            Filter by category
+                            <select id="filter-category" className="uk-select" onChange={this.filterResources} value={this.state.filterResources}>
+                                <option value="Show All" key="all">Show All</option>
+                                {config["resource-categories"].map((category) => (
+                                    <option value={category} key={category}>{category}</option>
+                                ))}
+                            </select>
+                        </label>
+                        <label>
+                            Filter by price
+                            <select id="filter-price" className="uk-select" onChange={this.filterPrice} value={this.state.filterPrice}>
+                                <option value="Show All" key="all">Show All</option>
+                                <option value="true" key="true">Free</option>
+                                <option value="false" key="false">Paid</option>
+                            </select>
+                        </label>
                     </div>
                 </section>
                 <main id="resources">
                     <div className="container">
-                        <div className="content">
-                            {!resources.length ? status :
-                                <CardGroup>
-                                    {resources.map((resource) =>
-                                        <Card
-                                            key={resource.key}
-                                            tag={resource.category}
-                                            tagClass={`lang-${resource.category.toLowerCase()}`}
-                                            title={resource.affiliate_link ? `${resource.name}*` : resource.name}
-                                            description={resource.description}
+                        {!resources.length ? status :
+                            <CardGroup>
+                                {resources.map((resource) =>
+                                    <Card
+                                        key={resource.key}
+                                        tag={resource.category}
+                                        tagClass={`lang-${resource.category.toLowerCase()}`}
+                                        title={resource.affiliate_link ? `${resource.name}*` : resource.name}
+                                        description={resource.description}
+                                    >
+                                        <a
+                                            className="uk-button uk-button-text uk-margin-right"
+                                            target="_blank"
+                                            href={resource.url}
+                                            rel="noopener noreferrer"
                                         >
-                                            <a
-                                                className="uk-button uk-button-text uk-margin-right"
-                                                target="_blank"
-                                                href={resource.url}
-                                                rel="noopener noreferrer"
-                                            >
-                                                Learn More
-                                            </a>
-                                        </Card>
-                                    )}
-                                </CardGroup>
-                            }
-                            <p id="affiliate-disclaimer">
-                                <b>Disclaimer:</b> Resources with a <code>*</code> are affiliate links.
-                            </p>
-                        </div>
+                                            Learn More
+                                        </a>
+                                    </Card>
+                                )}
+                            </CardGroup>
+                        }
+                        <p id="affiliate-disclaimer">
+                            <b>Disclaimer:</b> Resources with a <code>*</code> are affiliate links.
+                        </p>
                     </div>
                 </main>
             </PageTemplate>

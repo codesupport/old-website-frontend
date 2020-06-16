@@ -49,34 +49,32 @@ function Home() {
             </header>
             <main>
                 <section id="open-source" className="container">
-                    <div className="content">
-                        <h2 className="uk-text-center">
-                            We Love Open Source
-                        </h2>
-                        <p className="uk-text-center">
-                            At CodeSupport, we believe in building great projects together. Take a look at our open source projects below and start contributing!
-                        </p>
-                        <CardGroup size={2}>
-                            {openSourceProjects.map((project) => (
-                                <Card
-                                    key={project.title}
-                                    title={project.title}
-                                    tag={project.language}
-                                    tagClass={`lang-${project.language.toLowerCase()}`}
-                                    description={project.description}
+                    <h2 className="uk-text-center">
+                        We Love Open Source
+                    </h2>
+                    <p className="uk-text-center">
+                        At CodeSupport, we believe in building great projects together. Take a look at our open source projects below and start contributing!
+                    </p>
+                    <CardGroup size={2}>
+                        {openSourceProjects.map((project) => (
+                            <Card
+                                key={project.title}
+                                title={project.title}
+                                tag={project.language}
+                                tagClass={`lang-${project.language.toLowerCase()}`}
+                                description={project.description}
+                            >
+                                <a
+                                    className="uk-button uk-button-text uk-margin-right"
+                                    target="_blank"
+                                    href={project.repository}
+                                    rel="noopener noreferrer"
                                 >
-                                    <a
-                                        className="uk-button uk-button-text uk-margin-right"
-                                        target="_blank"
-                                        href={project.repository}
-                                        rel="noopener noreferrer"
-                                    >
-                                        GitHub Repository
-                                    </a>
-                                </Card>
-                            ))}
-                        </CardGroup>
-                    </div>
+                                    GitHub Repository
+                                </a>
+                            </Card>
+                        ))}
+                    </CardGroup>
                 </section>
             </main>
         </PageTemplate>
