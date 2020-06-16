@@ -29,25 +29,6 @@ function Navigation() {
                     </li>
                 </ul>
             </div>
-            <div className="nav-social uk-navbar-right">
-                <ul className="uk-navbar-nav">
-                    <li>
-                        <a href="https://codesupport.dev/discord">
-                            <FontAwesomeIcon icon={faDiscord} />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/codesupportdev">
-                            <FontAwesomeIcon icon={faTwitter} />
-                        </a>
-                    </li>
-                    <li className="uk-margin-right">
-                        <a href="https://github.com/codesupport">
-                            <FontAwesomeIcon icon={faGithub} />
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </nav>
     );
 }
