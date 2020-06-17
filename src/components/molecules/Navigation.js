@@ -39,7 +39,7 @@ function Navigation() {
                     </li>
                     {loggedIn &&
                         <li>
-                            <a onClick={AuthenticationService.signOut}>
+                            <a href="#logout" onClick={AuthenticationService.signOut}>
                                 Log Out
                             </a>
                         </li>
