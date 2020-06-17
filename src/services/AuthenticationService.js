@@ -4,6 +4,10 @@ import config from "../config";
 class AuthenticationService {
     api = config["auth-api"];
 
+    signOut() {
+        localStorage.removeItem("token");
+    }
+
     async setAccessToken(email, password) {
         const { status, data } = await axios.post(`${this.api}/authenticate`, {
             email, password

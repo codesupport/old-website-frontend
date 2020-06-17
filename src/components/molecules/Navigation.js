@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
+import AuthenticationService from "../../services/AuthenticationService";
 
 function Navigation() {
-    const loggedIn = sessionStorage.getItem("loggedIn");
+    const loggedIn = AuthenticationService.getAccessToken();
 
     return (
         <nav className="uk-navbar-container" data-uk-navbar>
@@ -36,6 +37,13 @@ function Navigation() {
                             {loggedIn ? "Your Profile" : "Log In"}
                         </Link>
                     </li>
+                    {loggedIn &&
+                        <li>
+                            <a onClick={AuthenticationService.signOut}>
+                                Log Out
+                            </a>
+                        </li>
+                    }
                 </ul>
             </div>
         </nav>
