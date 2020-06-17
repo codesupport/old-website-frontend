@@ -8,6 +8,7 @@ const config = {
         "resources-api": resourcesAPI,
         "resource-categories": resourceCategories,
         "github-api": githubAPI,
+        "auth-api": "http://api.codesupport.dev",
         "backend-api": "http://api.codesupport.dev/api",
         "firebase": {}
     },
@@ -16,7 +17,8 @@ const config = {
         "resources-api": resourcesAPI,
         "resource-categories": resourceCategories,
         "github-api": githubAPI,
-        "backend-api": "http://localhost:8080/api",
+        "auth-api": "http://localhost:8082",
+        "backend-api": "http://localhost:8082/api",
         "firebase": {
             "apiKey": "AIzaSyBshIWr5s-dU8ugQTHKJstI4E5ZyLi_V6g",
             "projectId": "codesupport-development",
