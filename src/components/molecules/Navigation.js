@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 
 function Navigation() {
+    const loggedIn = sessionStorage.getItem("loggedIn");
+
     return (
         <nav className="uk-navbar-container" data-uk-navbar>
             <div className="uk-navbar-left">
@@ -23,6 +25,15 @@ function Navigation() {
                     <li>
                         <Link to="/resources">
                             Resources
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+            <div className="uk-navbar-right">
+                <ul className="uk-navbar-nav nav-logo">
+                    <li>
+                        <Link to={loggedIn ? "/profile" : "/login"}>
+                            {loggedIn ? "Your Profile" : "Log In"}
                         </Link>
                     </li>
                 </ul>
