@@ -20,7 +20,7 @@ class AuthenticationService {
 
             localStorage.setItem("token", data.response[0].token);
         } catch ({ response }) {
-            if (response.status === 400) {
+            if (response?.status === 400) {
                 throw new Error("Your username or password is incorrect.");
             }
 
