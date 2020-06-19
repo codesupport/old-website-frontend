@@ -9,19 +9,21 @@ class AuthenticationService {
     }
 
     async setAccessToken(email, password) {
-        const { status, data } = await axios.post(`${this.api}/authenticate`, {
-            email, password
-        }, {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
+        try {
+            const { data } = await axios.post(`${this.api}/authenticate`, {
+                email, password
+            }, {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
 
-        if (status === 200) {
             localStorage.setItem("token", data.response[0].token);
-        } else if (status === 400) {
-            throw new Error("Your username or password is incorrect.");
-        } else {
+        } catch ({ response }) {
+            if (response.status === 400) {
+                throw new Error("Your username or password is incorrect.");
+            }
+
             throw new Error("There was a problem authenticating your account.");
         }
     }
