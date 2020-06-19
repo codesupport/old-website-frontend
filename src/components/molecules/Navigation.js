@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
+import AuthenticationService from "../../services/AuthenticationService";
 
 function Navigation() {
+    const loggedIn = AuthenticationService.getAccessToken();
+
     return (
         <nav className="uk-navbar-container" data-uk-navbar>
             <div className="uk-navbar-left">
@@ -25,6 +28,22 @@ function Navigation() {
                             Resources
                         </Link>
                     </li>
+                </ul>
+            </div>
+            <div className="uk-navbar-right">
+                <ul className="uk-navbar-nav nav-logo">
+                    <li>
+                        <Link to={loggedIn ? "/profile" : "/login"}>
+                            {loggedIn ? "Your Profile" : "Log In"}
+                        </Link>
+                    </li>
+                    {loggedIn &&
+                        <li>
+                            <a href="#logout" onClick={AuthenticationService.signOut}>
+                                Log Out
+                            </a>
+                        </li>
+                    }
                 </ul>
             </div>
         </nav>
